@@ -29,7 +29,7 @@ public class main {
         myCats.add(oggy);
 
         System.out.println(oggy);
-        System.out.println(MyCats);
+        System.out.println(myCats);
 
 
 
