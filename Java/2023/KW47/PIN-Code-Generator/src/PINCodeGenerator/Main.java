@@ -11,7 +11,5 @@ public class Main {
             System.out.println(pin);
             digit++;
         }while(digit < 10000);
-
-
     }
 }
