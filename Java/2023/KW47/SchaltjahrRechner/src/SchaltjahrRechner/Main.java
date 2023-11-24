@@ -3,6 +3,7 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
+    private static final String red = "\u001B[31m";
     private static void slowPrint(String output) {
         for (int i = 0; i<output.length(); i++) {
             char c = output.charAt(i);
@@ -11,7 +12,6 @@ public class Main {
                 TimeUnit.MILLISECONDS.sleep(25);
             }
             catch (Exception e) {
-
             }
         }
     }
@@ -29,9 +29,7 @@ public class Main {
         if(isLeapYear(year)) {
             System.out.println("The year " + year + " is a leap year!!");
         }else {
-            slowPrint("The year " + year + " is NOT a leap year...");
+            slowPrint(red + "The year " + year + " is NOT a leap year...");
         }
-
-
     }
 }
