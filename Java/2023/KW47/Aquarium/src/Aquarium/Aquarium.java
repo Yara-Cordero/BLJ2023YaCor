@@ -9,9 +9,9 @@ import java.util.Arrays;
 //2D-Array (int 0 = water 1 = fish 2 = floor 3 = deco) DONE
 //boolean (is freshwater(true) or saltwater?(false)) DONE
 //ArrayList -> Fish DONE
-//ArrayList -> Deco
+//ArrayList -> Deco DONE
 //add/remove fish function (fish) (either with name or position) DONE
-//add/remove deco (name or position)
+//add/remove deco (name or position) DONE (only with position)
 //get fish position (getter)
 //print tank (void) DONE
 
@@ -74,12 +74,12 @@ public class Aquarium {
     public void deleteDecoPerPosition(int xPos, int yPos) {
         Deco decoToRemove = null;
         for(Deco deco : decos) {
-            if(deco.getxPos() == xPos && deco.getyPos() == yPos) {
+            if(deco.getXPos() == xPos && deco.getYPos() == yPos) {
                 decoToRemove = deco;
                 break;
             }
         }
-        if(decoToRemove == null) {
+        if(decoToRemove != null) {
             decos.remove(decoToRemove);
             aquarium[xPos][yPos] = 0;
             System.out.println("The decoration at (" + xPos + ", " + yPos + ") was deleted.");
@@ -102,7 +102,7 @@ public class Aquarium {
         }
         String aquariumAsString = Arrays.deepToString(aquarium); //1 = tropical fish (saltwater) 2 = blue fish (freshwater) 3 = deco
         aquariumAsString = aquariumAsString.replace("[[", "▓").replace("], [", "▓\n▓").replace(", ", " ").replace("]]",
-                "▓").replace("0", "⛆").replace("1", "\uD83D\uDC20").replace("3", "\uD83E\uDEB8").replace("4", "\uD83E\uDEB8");
+                "▓").replace("0", "⛆").replace("1", "\uD83D\uDC20").replace("3", "\uD83E\uDEB8").replace("4", "\uD83C\uDF3F");
         System.out.println(aquariumAsString);
 
         for (int i = 0; i < aquarium.length + (aquarium.length / 3); i++) {
@@ -116,7 +116,37 @@ public class Aquarium {
         return xPos >= 0 && xPos < width && yPos >= 0 && yPos < length;
     }
 
+    public boolean isSaltWater() {
+        return isSaltWater;
+    }
 
+    public void setSaltWater(boolean saltWater) {
+        isSaltWater = saltWater;
+    }
+
+    public int[][] getAquarium() {
+        return aquarium;
+    }
+
+    public void setAquarium(int[][] aquarium) {
+        this.aquarium = aquarium;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
 
 
 }

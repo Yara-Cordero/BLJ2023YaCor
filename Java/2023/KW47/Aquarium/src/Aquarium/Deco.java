@@ -4,18 +4,15 @@ package Aquarium;
 //String type of deco
 
 public class Deco {
-
     private String typeOfDeco;
     private boolean type;
     private int xPos;
     private int yPos;
 
 
-    public Deco(String typeOfDeco, boolean type, int xPos, int yPos) {
+    public Deco(String typeOfDeco, boolean type) {
         this.typeOfDeco = typeOfDeco;
         this.type = type;
-        this.xPos = xPos;
-        this.yPos = yPos;
     }
 
     public void setXYPos(int xPos, int yPos) {
@@ -39,7 +36,7 @@ public class Deco {
         this.type = type;
     }
 
-    public int getxPos() {
+    public int getXPos() {
         return xPos;
     }
 
@@ -47,11 +44,21 @@ public class Deco {
         this.xPos = xPos;
     }
 
-    public int getyPos() {
+    public int getYPos() {
         return yPos;
     }
 
     public void setyPos(int yPos) {
         this.yPos = yPos;
+    }
+
+    @Override
+    public String toString() {
+        return "Deco{" +
+                "typeOfDeco='" + typeOfDeco + '\'' +
+                ", type=" + type +
+                ", xPos=" + xPos +
+                ", yPos=" + yPos +
+                '}';
     }
 }

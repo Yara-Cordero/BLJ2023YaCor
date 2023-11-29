@@ -93,4 +93,17 @@ public class Fish {
     public void setYPos(int yPos) {
         this.yPos = yPos;
     }
+
+    @Override
+    public String toString() {
+        return "Fish{" +
+                "nameOfFish='" + nameOfFish + '\'' +
+                ", typeOfFish=" + typeOfFish +
+                ", isSaltWater=" + isSaltWater +
+                ", colorOfFish='" + colorOfFish + '\'' +
+                ", isFemale=" + isFemale +
+                ", xPos=" + xPos +
+                ", yPos=" + yPos +
+                '}';
+    }
 }
