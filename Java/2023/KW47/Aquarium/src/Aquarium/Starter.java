@@ -182,7 +182,7 @@ public class Starter {
 
                     System.out.println("Do you want to continue adding fish to you aquarium?");
                     System.out.println("Enter 'yes' or 'no'");
-                    choiceRepeatInput = scan.nextLine().toLowerCase();
+                    choiceRepeatInput = scan.next().toLowerCase();
 
                 }
             } else if (choiceAnswer.equals("2") || choiceAnswer.equals("2.") || choiceAnswer.equals("delete fish")) {
