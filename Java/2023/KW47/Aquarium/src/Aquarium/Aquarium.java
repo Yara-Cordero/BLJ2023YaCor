@@ -66,9 +66,21 @@ public class Aquarium {
         }
     }
 
-    public void deleteFishPerName(Fish fish){
-        this.fishes.remove(fish);
-        this.aquarium[fish.getXPos()][fish.getYPos()] = 0; //turn place back to water
+    public void deleteFishPerPosition(int xPos, int yPos){
+        Fish fishToRemove = null;
+        for(Fish fish : fishes){
+            if(fish.getXPos() == xPos && fish.getYPos() == yPos) {
+                fishToRemove = fish;
+                break;
+            }
+        }
+        if(fishToRemove != null) {
+            fishes.remove(fishToRemove);
+            aquarium[xPos][yPos] = 0;
+            System.out.println("The fish at (" + xPos + ", " + yPos + ") was deleted.");
+        }else {
+            System.out.println("No fish was found at (" + xPos + ", " + yPos + ") was deleted.");
+        }
     }
 
     public void deleteDecoPerPosition(int xPos, int yPos) {
@@ -102,7 +114,7 @@ public class Aquarium {
         }
         String aquariumAsString = Arrays.deepToString(aquarium); //1 = tropical fish (saltwater) 2 = blue fish (freshwater) 3 = deco
         aquariumAsString = aquariumAsString.replace("[[", "▓").replace("], [", "▓\n▓").replace(", ", " ").replace("]]",
-                "▓").replace("0", "⛆").replace("1", "\uD83D\uDC20").replace("3", "\uD83E\uDEB8").replace("4", "\uD83C\uDF3F");
+                "▓").replace("0", "⛆").replace("1", "\uD83D\uDC20").replace("2", "\uD83D\uDC1F").replace("3", "\uD83E\uDEB8").replace("4", "\uD83C\uDF3F");
         System.out.println(aquariumAsString);
 
         for (int i = 0; i < aquarium.length + (aquarium.length / 3); i++) {

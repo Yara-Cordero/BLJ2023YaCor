@@ -21,12 +21,11 @@ public class Fish {
     private int yPos;
 
 
-    public Fish(String nameOfFish, int typeOfFish, boolean isSaltWater, String colorOfFish, boolean isFemale) {
+    public Fish(String nameOfFish, int typeOfFish, boolean isSaltWater, String colorOfFish) {
         this.nameOfFish = nameOfFish;
         this.typeOfFish = typeOfFish;
         this.isSaltWater = isSaltWater;
         this.colorOfFish = colorOfFish;
-        this.isFemale = isFemale;
     }
 
     public void setXYPos(int xPos, int yPos) {
