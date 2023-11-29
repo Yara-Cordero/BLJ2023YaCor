@@ -35,6 +35,10 @@ public class Starter {
         int width = scan.nextInt();
         int length = scan.nextInt();
 
+
+
+
+
         Fish nemo = new Fish("nemo", 2, true, "orange", true);
         Fish bob = new Fish("bob", 1, false, "blue", true);
 
