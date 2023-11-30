@@ -11,10 +11,10 @@ public class Main {
                 return  (chestCircumference / 2) - 6;
             }
             else if(height < 164) {
-                return  (chestCircumference / 2 ) - (6 / 2);
+                return  ((chestCircumference / 2 ) - 6) / 2;
             }
             else if (height > 170) {
-                return (chestCircumference / 2 ) - (6 * 2);
+                return ((chestCircumference / 2 ) - 6) * 2;
             }
         }
         else if (gender.equals("male")) {
