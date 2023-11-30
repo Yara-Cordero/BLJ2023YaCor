@@ -1,7 +1,6 @@
 package Konfektionsgroesse;
 
 import java.util.Scanner;
-
 public class Main {
 
     private static int computeGarmentSize(int height, String gender, int chestCircumference) {
