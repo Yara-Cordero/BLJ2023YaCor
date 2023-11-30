@@ -11,8 +11,9 @@ public class Main {
         boolean repeat = true;
 
             do {
-                System.out.println("Welcome to the translator!!!");
+                System.out.println("\nWelcome to the translator!!!");
                 System.out.println("1. text to morse\n2. morse to text\n3. exit");
+                System.out.println("==============================");
 
                 String inputChoice = scan.nextLine().toLowerCase();
 
@@ -23,8 +24,6 @@ public class Main {
                 } else {
                     repeat = false;
                 }
-
-
             }while(repeat);
 
 
