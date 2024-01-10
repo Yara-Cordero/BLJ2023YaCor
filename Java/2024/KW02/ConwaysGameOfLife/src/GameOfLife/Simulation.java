@@ -74,10 +74,30 @@ public class Simulation extends Thread {
 
       /*
        * Changes from the current to the next generation get written into a new array,
-       * instead of directly overwriting the old one. Why ist that?
+       * instead of directly overwriting the old one. Why is that?
        */
       int[][] newField = new int[field.length][field[0].length];
 
+      /*
+      int width = getFieldWidth();
+      int height = getFieldHeight();
+       */
+
+      for(int i = 0; i < field.length; i++ ){
+        for(int j = 0; j < field[i].length; j++){
+            int neighbourCount = getNeighbourCount(i, j);
+
+            if(field[i][j] == 1){
+              if(neighbourCount < 2|| neighbourCount > 3){
+                field[i][j] = 0;
+              }
+            }else {
+              if(neighbourCount == 3){
+                field[i][j] = 1;
+              }
+            }
+        }
+      }
       /*
        * TODO: Implement the main logic used for running the simulation. Make sure to
        * not implement everything here, but instead use the methods below (also to be
@@ -115,6 +135,42 @@ public class Simulation extends Thread {
    */
   private int getNeighbourCount(int x, int y) {
     int neighbourCount = 0;
+
+    for (int i = x - 1; i <= x + 1; i++) {
+      for (int j = y - 1; j <= y + 1; j++) {
+        // Check if the current cell is within the bounds and not the center cell itself
+        if (i >= 0 && i < field.length && j >= 0 && j < field[0].length && !(i == x && j == y)) {
+          // Check if the neighboring cell is alive (assuming 'field' is your grid)
+          if (field[i][j] == 1) {
+            neighbourCount++;
+          }
+        }
+      }
+    }
+
+    /*
+    if(field[x-1][y-1] == 1){
+      neighbourCount++;
+    }
+    if(field[x-1][y] == 1){
+      neighbourCount++;
+    }
+    if (field[x][y-1] == 1){
+      neighbourCount++;
+    }
+    if (field[x][y+1] == 1){
+      neighbourCount++;
+    }
+    if (field[x+1][y-1] == 1){
+      neighbourCount++;
+    }
+    if (field[x+1][y] == 1){
+      neighbourCount++;
+    }
+    if (field[x+1][y+1] == 1){
+      neighbourCount++;
+    }
+     */
 
     /*
      * TODO: Implement logic that counts the neighbours of a given cell. Neighbours
