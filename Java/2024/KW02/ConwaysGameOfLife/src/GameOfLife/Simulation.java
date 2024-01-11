@@ -14,7 +14,7 @@ import java.util.Arrays;
 public class Simulation extends Thread {
   private int speed;
   private boolean wrapField;
-  private int[][] field;
+  private int[][] field; //start config
 
   private PropertyChangeSupport pCS;
   private volatile boolean running;
@@ -90,11 +90,11 @@ public class Simulation extends Thread {
       for (int i = 0; i < field.length; i++) {
         for (int j = 0; j < field[i].length; j++) {
           //Get the count of live neighbours for the current cell
-          int neighbours = getNeighbourCount(i, j);
-
+          int neighbours = getWrappedNeighbourCount(i, j);
+          int current = field[i][j];
           //If the current cell is alive
-          if (field[i][j]==1){
-            //If the cell has ferwer than 2 or more than 3 live neighbours, it dies
+          if (current==1){
+            //If the cell has fewer than 2 or more than 3 live neighbours, it dies
             if (neighbours < 2 || neighbours > 3){
               newField[i][j] = 0;
             }
@@ -239,7 +239,20 @@ public class Simulation extends Thread {
    * @return An int value representing the number of wrapped neighbours of a cell.
    */
   private int getWrappedNeighbourCount(int x, int y) {
+    int neighbourCount= 0;
 
+    for (int i = -1; i <= 1; i++){
+      for(int j = -1; j <= 1; j++){
+        if(i == 0 && j == 0) continue;
+
+        int wrappedX = (x + i + field.length) % field.length;
+        int wrappedY = (y + j + field[0].length) % field[0].length;
+
+        if (field[wrappedX][wrappedY] == 1){
+          neighbourCount++;
+        }
+      }
+    }
     /*
      * TODO: INTERMEDIATE TASK - The simulation field is limited in size and has a
      * border. Having the simulation field wrap around itself means that something
@@ -247,7 +260,7 @@ public class Simulation extends Thread {
      * bottom and in all directions.
      */
 
-    return 0;
+    return neighbourCount;
   }
 
   /**
