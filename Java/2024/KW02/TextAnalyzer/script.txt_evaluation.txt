@@ -1,0 +1,8 @@
+[12.01.2024 10:33]		[script.txt]
+-----------------------------------------
+Number of unique words: 	[1284]
+Total number of words: 		[9159]
+Most common letter:			[a]
+Most common word: 			[a]
+Most common word: 			[a]
+-----------------------------------------
