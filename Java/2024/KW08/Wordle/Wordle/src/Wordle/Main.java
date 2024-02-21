@@ -1,13 +1,12 @@
 package Wordle;
 
-import java.util.Random;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
 
-    Scanner scan = new Scanner(System.in);
-
-    public static void main(String[] args) {
-        System.out.println("Hello world!");
+    public static void main(String[] args) throws IOException {
+        Game start = new Game();
+        start.start();
     }
 }
