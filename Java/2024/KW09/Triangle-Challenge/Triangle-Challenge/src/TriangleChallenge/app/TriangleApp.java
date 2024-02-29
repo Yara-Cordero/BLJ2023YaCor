@@ -1,7 +1,7 @@
 package TriangleChallenge.app;
 
-import TriangleChallenge.exceptions.IllegalTriangleSideException;
-import TriangleChallenge.exceptions.TriangleException;
+import TriangleChallenge.exceptions.*;
+import java.util.Scanner;
 
 // TODO: Import the exceptions
 
@@ -21,6 +21,8 @@ public class TriangleApp {
   private double sideC;
 
   private String code;
+
+  private Scanner scan = new Scanner(System.in);
 
   /**
    * The constructor.
@@ -42,6 +44,12 @@ public class TriangleApp {
     while (isRunning) {
       System.out.println("\nTEST CASES TRIANGLE\n");
 
+      sideAInput = promptSide("Side A:    ");
+
+
+
+
+
 	  // TODO: Ask user for all 3 sides and assign to intended fields
 
       try {
@@ -61,6 +69,13 @@ public class TriangleApp {
    */
   private void printHeader() {
 	// TODO: Print a fancy app header with handler, company and current year
+
+    System.out.println("***************************************************************\n");
+    System.out.println("                      TRIANGLE CALCULATOR                      \n");
+    System.out.println("***************************************************************\n");
+    System.out.println("02/2024");
+    System.out.println("");
+
   }
 
   /**
@@ -71,13 +86,15 @@ public class TriangleApp {
   }
 
   /**
-   * This method prompts the user to give an input for a trinalge side.
+   * This method prompts the user to give an input for a triangle side.
    * 
    * @param side of type String to display as title for the prompt.
    * @return the input of type String.
    */
   private String promptSide(String side) {
+    System.out.println(side);
     // TODO: Ask user for input
+    return scan.nextLine();
   }
 
   /**
@@ -104,16 +121,21 @@ public class TriangleApp {
   private void validateInput() throws TriangleException {
     try {
       sideA = Double.parseDouble(sideAInput);
+      sideB = Double.parseDouble(sideBInput);
+      sideC = Double.parseDouble(sideCInput);
       // TODO: Do the same for sideB and SideC
 	  
     } catch (NumberFormatException nfe) {
       throw new IllegalTriangleSideException();
     }
 
+
     if (sideA == 0 || sideB == 0 || sideC == 0) {
+      throw new ZeroTriangleSideException();
       // TODO: throws ZeroTriangleSideException
     }
-	// TODO: Validate other triangle cases
+
+    // TODO: Validate other triangle cases
   }
 
   /**
@@ -124,6 +146,15 @@ public class TriangleApp {
    */
   private String determineTriangleType() {
     // TODO: Based on sideA, sideB, sideC, return correct code
-    return null;
+    if (sideA == sideB || sideA == sideC || sideB == sideC) {
+      code = "TRI84TF";
+    } else if (sideA == sideB && sideA == sideC && sideB == sideC) {
+      code = "TRI66TF";
+    } else if (sideC * sideC == sideA * sideA + sideB * sideB || sideA * sideA == sideC * sideC + sideB * sideB || sideB * sideB == sideA * sideA + sideC * sideC ) {
+      code = "TRI72TF";
+    }else {
+      code = "TRI60TF";
+    }
+    return code;
   }
 }
