@@ -1,6 +1,8 @@
 package TriangleChallenge.app;
 
 import TriangleChallenge.exceptions.*;
+
+import java.util.Locale;
 import java.util.Scanner;
 
 // TODO: Import the exceptions
@@ -22,7 +24,7 @@ public class TriangleApp {
 
   private String code;
 
-  private Scanner scan = new Scanner(System.in);
+  private final Scanner scan = new Scanner(System.in);
 
   /**
    * The constructor.
@@ -31,8 +33,11 @@ public class TriangleApp {
    * @param handler of type String to print in the application header
    */
   public TriangleApp(String company, String handler) {
+    this.company = company;
+    this.handler = handler;
 	// TODO: Persist company and handler in the intended fields
 	// TODO: Set field isRunning to true
+    isRunning = true;
   }
 
   /**
@@ -45,10 +50,8 @@ public class TriangleApp {
       System.out.println("\nTEST CASES TRIANGLE\n");
 
       sideAInput = promptSide("Side A:    ");
-
-
-
-
+      sideBInput = promptSide("Side B    ");
+      sideCInput = promptSide("Side C:    ");
 
 	  // TODO: Ask user for all 3 sides and assign to intended fields
 
@@ -74,7 +77,6 @@ public class TriangleApp {
     System.out.println("                      TRIANGLE CALCULATOR                      \n");
     System.out.println("***************************************************************\n");
     System.out.println("02/2024");
-    System.out.println("");
 
   }
 
@@ -83,6 +85,9 @@ public class TriangleApp {
    */
   private void printResult() {
 	// TODO: Print code
+    System.out.println("\n---------------------");
+    System.out.println("CODE:     " + code);
+    System.out.println("---------------------\n");
   }
 
   /**
@@ -104,11 +109,25 @@ public class TriangleApp {
    * else: Keeps asking for an input until "q" or "c" is entered.
    */
   private void promptAction() {
-    String action = "";
     // TODO: Get valid prompt
-	// TODO: Check if program needs to be cancelled (set isRunning to false)
-	
-    System.out.println("******************************");
+    // TODO: Check if program needs to be cancelled (set isRunning to false)
+    String action = "";
+    boolean error = false;
+
+    do{
+      System.out.println("<q>  quit");
+      System.out.println("<c>  continue");
+
+      action = scan.nextLine().toLowerCase();
+      if (action.equals("q")) {
+        isRunning = false;
+      } else if (action.equals("c")) {
+        isRunning = true;
+      } else {
+        error = true;
+      }
+    }while (error);
+    System.out.println("\n******************************");
   }
 
   /**
@@ -119,6 +138,7 @@ public class TriangleApp {
    *                           entered values do not lead to a triangle.
    */
   private void validateInput() throws TriangleException {
+    // TODO: Validate other triangle cases
     try {
       sideA = Double.parseDouble(sideAInput);
       sideB = Double.parseDouble(sideBInput);
@@ -129,13 +149,16 @@ public class TriangleApp {
       throw new IllegalTriangleSideException();
     }
 
-
     if (sideA == 0 || sideB == 0 || sideC == 0) {
       throw new ZeroTriangleSideException();
       // TODO: throws ZeroTriangleSideException
+    } else if (sideA < 0 || sideB < 0 || sideC < 0 ) {
+      throw new NegativeTriangleSideException();
+    } else if (sideA == sideB + sideC || sideB == sideA + sideC || sideC == sideB + sideA) {
+      throw new TriangleIsLineException();
+    } else {
+      throw new ImpossibleTriangleException();
     }
-
-    // TODO: Validate other triangle cases
   }
 
   /**
