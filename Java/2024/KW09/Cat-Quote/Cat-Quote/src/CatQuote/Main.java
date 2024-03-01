@@ -10,10 +10,14 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         ZenQuote Quote = new ZenQuote();
+        Cataas Cat = new Cataas();
+
         boolean error;
 
         do {
             Quote.getQuote();
+            Cat.getCat();
+
             do {
                 System.out.println("\n<m> more Quotes");
                 System.out.println("<q> quit");
