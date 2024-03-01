@@ -50,8 +50,8 @@ public class TriangleApp {
       System.out.println("\nTEST CASES TRIANGLE\n");
 
       sideAInput = promptSide("Side A:    ");
-      sideBInput = promptSide("Side B    ");
-      sideCInput = promptSide("Side C:    ");
+      sideBInput = promptSide("\nSide B:    ");
+      sideCInput = promptSide("\nSide C:    ");
 
 	  // TODO: Ask user for all 3 sides and assign to intended fields
 
@@ -75,8 +75,11 @@ public class TriangleApp {
 
     System.out.println("***************************************************************\n");
     System.out.println("                      TRIANGLE CALCULATOR                      \n");
-    System.out.println("***************************************************************\n");
+    System.out.println("***************************************************************");
+    System.out.println(handler + "/" + company);
     System.out.println("02/2024");
+
+
 
   }
 
@@ -97,7 +100,7 @@ public class TriangleApp {
    * @return the input of type String.
    */
   private String promptSide(String side) {
-    System.out.println(side);
+    System.out.print(side);
     // TODO: Ask user for input
     return scan.nextLine();
   }
@@ -152,11 +155,17 @@ public class TriangleApp {
     if (sideA == 0 || sideB == 0 || sideC == 0) {
       throw new ZeroTriangleSideException();
       // TODO: throws ZeroTriangleSideException
-    } else if (sideA < 0 || sideB < 0 || sideC < 0 ) {
+    }
+
+    if (sideA < 0 || sideB < 0 || sideC < 0 ) {
       throw new NegativeTriangleSideException();
-    } else if (sideA == sideB + sideC || sideB == sideA + sideC || sideC == sideB + sideA) {
+    }
+
+    if (sideA == sideB + sideC || sideB == sideA + sideC || sideC == sideB + sideA) {
       throw new TriangleIsLineException();
-    } else {
+    }
+
+    if (sideA > sideB + sideC || sideB > sideA + sideC || sideC > sideB + sideA) {
       throw new ImpossibleTriangleException();
     }
   }
@@ -169,15 +178,14 @@ public class TriangleApp {
    */
   private String determineTriangleType() {
     // TODO: Based on sideA, sideB, sideC, return correct code
-    if (sideA == sideB || sideA == sideC || sideB == sideC) {
-      code = "TRI84TF";
-    } else if (sideA == sideB && sideA == sideC && sideB == sideC) {
-      code = "TRI66TF";
+    if (sideA == sideB && sideB == sideC) {
+      return "TRI66TF";
+    } else if (sideA == sideB || sideA == sideC || sideB == sideC) {
+      return "TRI84TF";
     } else if (sideC * sideC == sideA * sideA + sideB * sideB || sideA * sideA == sideC * sideC + sideB * sideB || sideB * sideB == sideA * sideA + sideC * sideC ) {
-      code = "TRI72TF";
+      return "TRI72TF";
     }else {
-      code = "TRI60TF";
+      return "TRI60TF";
     }
-    return code;
   }
 }
