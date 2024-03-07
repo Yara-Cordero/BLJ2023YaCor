@@ -6,6 +6,11 @@ public class VideoGame extends Media{
     public VideoGame() {
     }
 
+    public VideoGame(String title, String releaseDate, String producer, String language, String console) {
+        super(title, releaseDate, producer, language);
+        this.console = console;
+    }
+
     @Override
     public void getInfo() {
         super.printInfo();

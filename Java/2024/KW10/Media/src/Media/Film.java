@@ -4,7 +4,10 @@ public class Film extends Media{
     private String length;
     private String director;
 
-    public Film() {
+    public Film(String title, String releaseDate, String producer, String language, String length, String director) {
+        super(title, releaseDate, producer, language);
+        this.length = length;
+        this.director = director;
     }
 
     @Override

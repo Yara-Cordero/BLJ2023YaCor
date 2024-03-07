@@ -12,7 +12,10 @@ public class Book extends Media{
         System.out.println(moreInfo);
     }
 
-    public Book() {
+    public Book(String title, String releaseDate, String producer, String language, String author, int pages) {
+        super(title, releaseDate, producer, language);
+        this.author = author;
+        this.pages = pages;
     }
 
     public String getAuthor() {

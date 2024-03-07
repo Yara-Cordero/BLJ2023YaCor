@@ -9,6 +9,13 @@ public abstract class Media {
     public Media() {
     }
 
+    public Media(String title, String releaseDate, String producer, String language) {
+        this.title = title;
+        this.releaseDate = releaseDate;
+        this.producer = producer;
+        this.language = language;
+    }
+
     public void printInfo() {
         String info = "\nTitle: " + title +
                 "\nRelease Date: " + releaseDate +

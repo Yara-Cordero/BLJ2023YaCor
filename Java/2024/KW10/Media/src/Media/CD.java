@@ -8,6 +8,14 @@ public class CD extends Media {
     public CD() {
     }
 
+
+    public CD(String title, String releaseDate, String producer, String language, String artist, int songAmount, String length) {
+        super(title, releaseDate, producer, language);
+        this.artist = artist;
+        this.songAmount = songAmount;
+        this.length = length;
+    }
+
     @Override
     public void getInfo() {
         super.printInfo();
