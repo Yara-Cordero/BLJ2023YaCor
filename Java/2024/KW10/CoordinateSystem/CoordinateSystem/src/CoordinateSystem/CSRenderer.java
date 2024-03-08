@@ -112,6 +112,14 @@ public class CSRenderer extends JPanel {
       g2d.setColor(Color.BLUE);
       g2d.drawLine(translatedPoint.x, translatedPoint.y, translatedPoint.x, translatedPoint.y);
     }
+
+    g2d.setStroke(new BasicStroke(pointSize));
+    g2d.setColor(Color.GREEN);
+    for (CSLineSegment  lineSegment : cs.getLineSegments()) {
+      CSPoint translatedStart = translatePoint(lineSegment.lineStart());
+      CSPoint translatedEnd = translatePoint(lineSegment.lineEnd());
+      g2d.drawLine(translatedStart.x, translatedStart.y, translatedEnd.x, translatedEnd.y);
+    }
   }
 
   /**
