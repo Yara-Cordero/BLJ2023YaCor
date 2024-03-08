@@ -3,7 +3,11 @@ package Media;
 public class Book extends Media{
     private String author;
     private int pages;
-
+    public Book(String title, String releaseDate, String producer, String language, String author, int pages) {
+        super(title, releaseDate, producer, language);
+        this.author = author;
+        this.pages = pages;
+    }
     @Override
     public void getInfo(){
         super.printInfo();
@@ -12,10 +16,12 @@ public class Book extends Media{
         System.out.println(moreInfo);
     }
 
-    public Book(String title, String releaseDate, String producer, String language, String author, int pages) {
-        super(title, releaseDate, producer, language);
-        this.author = author;
-        this.pages = pages;
+    @Override
+    public String toString() {
+        return  "\nMedia: Book"+
+                super.toString() +
+                "Author: " + author + '\n' +
+                "Pages: " + pages;
     }
 
     public String getAuthor() {
@@ -33,4 +39,5 @@ public class Book extends Media{
     public void setPages(int pages) {
         this.pages = pages;
     }
+
 }

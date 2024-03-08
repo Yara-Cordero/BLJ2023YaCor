@@ -18,6 +18,13 @@ public class VideoGame extends Media{
         System.out.println(moreInfo);
     }
 
+    @Override
+    public String toString() {
+        return  "\nMedia: Video Game" +
+                super.toString() +
+                "Console: " + console;
+    }
+
     public String getConsole() {
         return console;
     }

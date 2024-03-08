@@ -16,12 +16,22 @@ public abstract class Media {
         this.language = language;
     }
 
+
+
     public void printInfo() {
         String info = "\nTitle: " + title +
                 "\nRelease Date: " + releaseDate +
                 "\nProducer: " + producer +
                 "\nLanguage: " + language;
         System.out.println(info);
+    }
+
+    @Override
+    public String toString() {
+        return "\nTitle: " + title + '\n' +
+                "releaseDate: " + releaseDate + '\n' +
+                "producer: " + producer + '\n' +
+                "language: " + language + '\n';
     }
 
     public String getTitle() {

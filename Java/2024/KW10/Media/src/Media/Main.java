@@ -1,65 +1,68 @@
 package Media;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
+
+    private static final ArrayList <Book> books = new ArrayList<>();
+    private static final ArrayList <Film> films = new ArrayList<>();
+    private static final ArrayList <CD> cds = new ArrayList<>();
+    private static final ArrayList <VideoGame> videoGames = new ArrayList<>();
+    private static final ArrayList <Media> mediaCollection = new ArrayList<>();
+
+    static boolean isRunning;
+    static boolean error;
+    Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
+        setScene();
+
+        do {
+            do {
+                System.out.println("Do you");
 
 
-        ArrayList <Book> books = new ArrayList<>();
+            }while (error);
+        }while (isRunning);
+        //videoGame1.getInfo();
 
+        for (Media media : mediaCollection){
+            System.out.println(media);
+        }
+    }
 
-
+    public static void setScene(){
         Book book1 = new Book("Poppy War", "18.10.2018", "Harper Voyage", "English", "R.F Kuang", 544 );
-        books.add(book1);
-
-        /* //old way to create a book using setters
-        Book book1 = new Book();
-        book1.setTitle("Poppy War");
-        book1.setAuthor("R.F. Kuang");
-        book1.setPages(544);
-        book1.setProducer("Harper Voyage");
-        book1.setLanguage("English");
-        book1.setReleaseDate("18.10.2018");
-
-         */
-
-        book1.getInfo();
+        Book book2 = new Book("The Name Of The Wind", "01.04.2007", "DAW Books" ,"English", "Patrick Rothfuss", 661);
 
         Film film1 = new Film("Fight Club", "10.11.1999", null, "English", "2h 19min", "David Fincher");
-        /*
-        film1.setDirector("David Fincher");
-        film1.setLanguage("English");
-        film1.setLength("2h 19min");
-        film1.setTitle("Fight Club");
-        film1.setReleaseDate("10.11.1999");
-         */
-
-        film1.getInfo();
+        Film film2 = new Film("Girl, Interrupted", "21.12.1999", null, "English", "2h 7min", "James Mangold");
 
         CD cd1 = new CD("Blonde", "20.08.2016", "Boys Don't Cry", "English", "Frank Ocean", 17, "1h");
-        /*
-        cd1.setTitle("Blonde");
-        cd1.setArtist("Frank Ocean");
-        cd1.setLength("1h");
-        cd1.setSongAmount(17);
-        cd1.setLanguage("English");
-        cd1.setProducer("Boys Don't Cry");
-        cd1.setReleaseDate("20.08.2016");
-         */
-
-        cd1.getInfo();
+        CD cd2 = new CD("CALL ME IF YOU GET LOST", "25.06.2021", "Columbia Records", "English", "Tyler, The Creator", 16, "52min");
 
         VideoGame videoGame1 = new VideoGame("Spider-Man 2", "20.10.2023", "Insomniac Games", "English", "PS5");
-        VideoGame videoGame2 = new VideoGame("");
-        /*
-        videoGame1.setTitle("Spider-Man 2");
-        videoGame1.setConsole("PS5");
-        videoGame1.setLanguage("English");
-        videoGame1.setProducer("Insomniac Games");
-        videoGame1.setReleaseDate("20.10.2023");
-         */
+        VideoGame videoGame2 = new VideoGame("Red Dead Redemption II", "26.10.2018", "Rockstar Games", "English", "PS4/5, XBOX One");
 
-        videoGame1.getInfo();
+        books.add(book1);
+        books.add(book2);
+        films.add(film1);
+        films.add(film2);
+        cds.add(cd1);
+        cds.add(cd2);
+        videoGames.add(videoGame1);
+        videoGames.add(videoGame2);
+
+        mediaCollection.addAll(books);
+        mediaCollection.addAll(films);
+        mediaCollection.addAll(videoGames);
+        mediaCollection.addAll(cds);
     }
+
+    private String promptSide(String side) {
+        System.out.print(side);
+        // TODO: Ask user for input
+        return scan.nextLine();
+    }
+
 }

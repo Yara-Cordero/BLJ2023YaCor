@@ -4,18 +4,12 @@ public class CD extends Media {
     private String artist;
     private int songAmount;
     private String length;
-
-    public CD() {
-    }
-
-
     public CD(String title, String releaseDate, String producer, String language, String artist, int songAmount, String length) {
         super(title, releaseDate, producer, language);
         this.artist = artist;
         this.songAmount = songAmount;
         this.length = length;
     }
-
     @Override
     public void getInfo() {
         super.printInfo();
@@ -23,6 +17,15 @@ public class CD extends Media {
                 "\nSongs: " + songAmount +
                 "\nLength: " + length;
         System.out.println(moreInfo);
+    }
+
+    @Override
+    public String toString() {
+        return  "\nMedia: CD" +
+                super.toString() +
+                "Artist: " + artist + '\n' +
+                "Songs: " + songAmount + '\n' +
+                "length: " + length;
     }
 
     public String getArtist() {

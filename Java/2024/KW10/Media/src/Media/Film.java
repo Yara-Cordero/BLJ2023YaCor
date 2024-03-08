@@ -9,13 +9,19 @@ public class Film extends Media{
         this.length = length;
         this.director = director;
     }
-
     @Override
     public void getInfo() {
         super.printInfo();
         String moreInfo = "Length: " + length +
                 "\nDirector: " + director;
         System.out.println(moreInfo);
+    }
+    @Override
+    public String toString() {
+        return  "\nMedia: Film" +
+                super.toString() +
+                "Length" + length + '\n' +
+                "Director: " + director;
     }
 
     public String getLength() {
