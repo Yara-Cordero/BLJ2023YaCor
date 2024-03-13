@@ -12,6 +12,7 @@ import java.awt.event.MouseEvent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+
 /**
  * This class is responsible for visualising a given coordinate system in a
  * halfway pleasing way.
@@ -28,23 +29,29 @@ public class CSRenderer extends JPanel {
   private final int fieldScale;
   private final int pointSize;
 
+  private Color pointColor;
+  private Color lineColor;
+
+
   private final int OFFSET_MID;
   private final int OFFSET_END;
 
   /**
    * This constructor sets up the window where the coordinate system will be
    * drawn.
-   * 
+   *
    * @param cs         The coordinate system (including all points) to draw.
    * @param fieldScale The scaling of the coordinate system.
    * @param pointSize  The size which will determine how large points will appear
    *                   in the coordinate system.
    */
-  public CSRenderer(CoordinateSystem cs, int fieldScale, int pointSize) {
+  public CSRenderer(CoordinateSystem cs, int fieldScale, int pointSize, Color pointColor, Color lineColor) {
     this.cs = cs;
     this.size = cs.getCoordinateSystemSize() * fieldScale;
     this.fieldScale = fieldScale;
     this.pointSize = pointSize;
+    this.lineColor = lineColor;
+    this.pointColor = pointColor;
 
     OFFSET_MID = (size + fieldScale) / 2;
     OFFSET_END = size + (fieldScale / 2);
@@ -70,8 +77,9 @@ public class CSRenderer extends JPanel {
    * 
    * @param cs The coordinate system (including all points) to draw.
    */
-  public CSRenderer(CoordinateSystem cs) {
-    this(cs, 1, 3);
+  public CSRenderer(CoordinateSystem cs, Color pointColor, Color lineColor) {
+    this(cs, 1, 3, pointColor, lineColor);
+
   }
 
   /**
@@ -109,12 +117,12 @@ public class CSRenderer extends JPanel {
     g2d.setStroke(new BasicStroke(pointSize));
     for (CSPoint point : cs.getAllPoints()) {
       CSPoint translatedPoint = translatePoint(point);
-      g2d.setColor(Color.BLUE);
+      g2d.setColor(pointColor);
       g2d.drawLine(translatedPoint.x, translatedPoint.y, translatedPoint.x, translatedPoint.y);
     }
 
     g2d.setStroke(new BasicStroke(pointSize));
-    g2d.setColor(Color.GREEN);
+    g2d.setColor(lineColor);
     for (CSLineSegment  lineSegment : cs.getLineSegments()) {
       CSPoint translatedStart = translatePoint(lineSegment.lineStart());
       CSPoint translatedEnd = translatePoint(lineSegment.lineEnd());

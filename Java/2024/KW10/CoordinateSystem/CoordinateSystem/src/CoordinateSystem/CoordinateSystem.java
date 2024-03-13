@@ -2,6 +2,7 @@ package CoordinateSystem;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.awt.Color;
 
 public class CoordinateSystem {
     private int coordinateSystemSize;
