@@ -30,9 +30,6 @@ public class CSRenderer extends JPanel {
   private final int pointSize;
 
   private final Color pointColor;
-  private final Color lineColor;
-  private final Color rectangleColor;
-
 
   private final int OFFSET_MID;
   private final int OFFSET_END;
@@ -46,12 +43,11 @@ public class CSRenderer extends JPanel {
    * @param pointSize  The size which will determine how large points will appear
    *                   in the coordinate system.
    */
-  public CSRenderer(CoordinateSystem cs, int fieldScale, int pointSize, Color pointColor, Color lineColor, Color rectangleColor) {
+  public CSRenderer(CoordinateSystem cs, int fieldScale, int pointSize, Color pointColor) {
     this.cs = cs;
     this.size = cs.getCoordinateSystemSize() * fieldScale;
     this.fieldScale = fieldScale;
     this.pointSize = pointSize;
-    this.lineColor = lineColor;
     this.pointColor = pointColor;
 
     OFFSET_MID = (size + fieldScale) / 2;
@@ -78,8 +74,8 @@ public class CSRenderer extends JPanel {
    * 
    * @param cs The coordinate system (including all points) to draw.
    */
-  public CSRenderer(CoordinateSystem cs, Color pointColor, Color lineColor, Color rectangleColor) {
-    this(cs, 1, 3, pointColor, lineColor, rectangleColor);
+  public CSRenderer(CoordinateSystem cs, Color pointColor) {
+    this(cs, 1, 3, pointColor);
 
   }
 
@@ -123,21 +119,22 @@ public class CSRenderer extends JPanel {
     }
 
     g2d.setStroke(new BasicStroke(pointSize));
-    g2d.setColor(lineColor);
     for (CSLineSegment  lineSegment : cs.getLineSegments()) {
+      g2d.setColor(lineSegment.getColorLine());
       CSPoint translatedStart = translatePoint(lineSegment.lineStart());
       CSPoint translatedEnd = translatePoint(lineSegment.lineEnd());
       g2d.drawLine(translatedStart.x, translatedStart.y, translatedEnd.x, translatedEnd.y);
     }
 
     g2d.setStroke(new BasicStroke(pointSize));
-    g2d.setColor(rectangleColor);
     for(CSRectangle rectangle : cs.getRectangles()){
-      CSPoint translated = translatePoint(rectangle.getX());
-      g2d.drawRect(translatedPont.x);
+      g2d.setColor(rectangle.getColorRectangle());
+      CSPoint translatedBasePoint = translatePoint(rectangle.getBasePoint());
+      int translatedWidth = rectangle.getSideA() * fieldScale;
+      int translatedHeight = rectangle.getSideB() * fieldScale;
+      g2d.drawRect(translatedBasePoint.x, translatedBasePoint.y,translatedWidth, translatedHeight);
     }
   }
-
   /**
    * This method is responsible for converting a Java Swing absolute position
    * point (origin at the very top left) to a point of a cartesian coordinate

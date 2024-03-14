@@ -21,19 +21,17 @@ public class CSRectangle {
         return basePoint;
     }
 
-    public int getX(){
-        return basePoint.getX();
+    public int getSideA() {
+        return sideA;
     }
 
-    private int getY(){
-        return basePoint.getY();
+    public int getSideB() {
+        return sideB;
+    }
+
+    public Color getColorRectangle() {
+        return colorRectangle;
     }
 
 
-    public void draw(Graphics2D g2d){
-        g2d.setStroke(new BasicStroke(2));
-        g2d.setColor(colorRectangle);
-
-        g2d.drawRect(getX(), getY(), sideA, sideB);
-    }
 }
