@@ -8,6 +8,7 @@ public class CSPoint extends Point {
 
     private static int count = 0;
     private int id;
+    private Color colorPoint;
 
     public CSPoint() {
         this(0,0);
@@ -16,6 +17,16 @@ public class CSPoint extends Point {
     public CSPoint(int x, int y) {
         super(x, y);
         this.id = count++;
+    }
+
+    public CSPoint(int x, int y, Color colorPoint) {
+        super(x, y);
+        this.id = count++;
+        this.colorPoint = colorPoint;
+    }
+
+    public Color getColorPoint() {
+        return colorPoint;
     }
 
     public int getId() {

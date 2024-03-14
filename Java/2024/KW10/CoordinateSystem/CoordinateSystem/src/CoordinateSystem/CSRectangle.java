@@ -4,11 +4,11 @@ import java.awt.*;
 
 public class CSRectangle {
 
-    private int sideA;
-    private int sideB;
+    private final int sideA;
+    private final int sideB;
 
-    private Color colorRectangle;
-    private CSPoint basePoint;
+    private final Color colorRectangle;
+    private final CSPoint basePoint;
 
     public CSRectangle(int sideA, int sideB, Color colorRectangle, CSPoint basePoint) {
         this.sideA = sideA;

@@ -5,10 +5,10 @@ import java.awt.*;
 public class CSLineSegment {
 
     private static int count = 0;
-    private int id;
+    private final int id;
     private CSPoint start;
     private CSPoint end;
-    private Color colorLine;
+    private final Color colorLine;
 
     public CSLineSegment(CSPoint start, CSPoint end, Color colorLine) {
         this.id = count++;

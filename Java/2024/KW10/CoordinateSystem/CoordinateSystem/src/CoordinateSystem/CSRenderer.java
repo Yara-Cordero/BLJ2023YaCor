@@ -29,7 +29,6 @@ public class CSRenderer extends JPanel {
   private final int fieldScale;
   private final int pointSize;
 
-  private final Color pointColor;
 
   private final int OFFSET_MID;
   private final int OFFSET_END;
@@ -43,12 +42,11 @@ public class CSRenderer extends JPanel {
    * @param pointSize  The size which will determine how large points will appear
    *                   in the coordinate system.
    */
-  public CSRenderer(CoordinateSystem cs, int fieldScale, int pointSize, Color pointColor) {
+  public CSRenderer(CoordinateSystem cs, int fieldScale, int pointSize) {
     this.cs = cs;
     this.size = cs.getCoordinateSystemSize() * fieldScale;
     this.fieldScale = fieldScale;
     this.pointSize = pointSize;
-    this.pointColor = pointColor;
 
     OFFSET_MID = (size + fieldScale) / 2;
     OFFSET_END = size + (fieldScale / 2);
@@ -74,8 +72,8 @@ public class CSRenderer extends JPanel {
    * 
    * @param cs The coordinate system (including all points) to draw.
    */
-  public CSRenderer(CoordinateSystem cs, Color pointColor) {
-    this(cs, 1, 3, pointColor);
+  public CSRenderer(CoordinateSystem cs) {
+    this(cs, 1, 3);
 
   }
 
@@ -114,7 +112,7 @@ public class CSRenderer extends JPanel {
     g2d.setStroke(new BasicStroke(pointSize));
     for (CSPoint point : cs.getAllPoints()) {
       CSPoint translatedPoint = translatePoint(point);
-      g2d.setColor(pointColor);
+      g2d.setColor(point.getColorPoint());
       g2d.drawLine(translatedPoint.x, translatedPoint.y, translatedPoint.x, translatedPoint.y);
     }
 

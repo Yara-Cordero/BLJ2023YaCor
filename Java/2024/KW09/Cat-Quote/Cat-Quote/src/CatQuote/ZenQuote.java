@@ -7,6 +7,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class ZenQuote {
+    String quoteText;
+    String author;
 
     public ZenQuote() {
     }
@@ -46,10 +48,18 @@ public class ZenQuote {
             String quoteText = getValue(json, "q");
             String author = getValue(json, "a");
 
-            System.out.println("Quote: " + quoteText);
-            System.out.println("Author: " + author);
         } else {
             System.out.println("Error: Unable to fetch quotes. Response code: " + responseCode);
         }
+    }
+
+    public void printQuoute(){
+        System.out.println("Quote: " + quoteText);
+        System.out.println("Author: " + author);
+    }
+
+
+    public String getQuoteText() {
+        return quoteText;
     }
 }
