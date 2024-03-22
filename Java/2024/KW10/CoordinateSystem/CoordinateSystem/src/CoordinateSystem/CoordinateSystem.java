@@ -5,11 +5,12 @@ import java.util.List;
 
 public class CoordinateSystem {
     private int coordinateSystemSize;
-    private final List<CSPoint> points;
-    private final List<CSLineSegment> lineSegments;
-    private final List<CSRectangle> rectangles;
+    private List<CSPoint> points;
+    private List<CSLineSegment> lineSegments;
+    private List<CSRectangle> rectangles;
     private List<CSTriangle> triangles;
     private List<CSCircle> circles;
+    private List<CSPolygon> polygons;
 
 
     public CoordinateSystem(int coordinateSystemSize) throws IllegalAccessException {
@@ -22,6 +23,7 @@ public class CoordinateSystem {
         this.rectangles = new ArrayList<>();
         this.triangles = new ArrayList<>();
         this.circles = new ArrayList<>();
+        this.polygons = new ArrayList<>();
     }
 
     public void addPoints(CSPoint csPoint){
@@ -42,6 +44,10 @@ public class CoordinateSystem {
 
     public void addCircle(CSCircle circle){
         circles.add(circle);
+    }
+
+    public void addPolygon(CSPolygon polygon){
+        polygons.add(polygon);
     }
 
     public List<CSPoint> getPoints() {
@@ -66,6 +72,10 @@ public class CoordinateSystem {
 
     public List<CSCircle> getCircles() {
         return circles;
+    }
+
+    public List<CSPolygon> getPolygons() {
+        return polygons;
     }
 
     public int getCoordinateSystemSize() {

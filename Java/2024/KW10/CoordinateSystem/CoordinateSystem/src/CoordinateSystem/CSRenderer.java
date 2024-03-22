@@ -84,6 +84,7 @@ public class CSRenderer extends JPanel {
   private void initDrawables(){
     drawables.addAll(cs.getTriangles());
     drawables.addAll(cs.getCircles());
+    drawables.addAll(cs.getPolygons());
   }
 
   /**
@@ -143,7 +144,6 @@ public class CSRenderer extends JPanel {
       int translatedHeight = rectangle.getSideB() * fieldScale;
       g2d.drawRect(translatedBasePoint.x, translatedBasePoint.y,translatedWidth, translatedHeight);
     }
-
 
     for (Drawable drawable : drawables){
       drawable.draw(g2d, this);
