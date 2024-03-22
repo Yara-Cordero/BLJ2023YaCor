@@ -1,22 +1,25 @@
 package CatQuote;
 
-import java.io.IOException;
-import java.awt.Image;
-import java.net.URL;
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
+import javax.swing.*;
+import java.awt.*;
+import java.io.IOException;
+import java.net.URL;
 
-public class Cataas {
+public class CataasWithText {
 
-    public Cataas() {
+    public CataasWithText() {
     }
 
-    public void getCat() throws IOException {
+    public void getCatWithText() {
         try {
+            ZenQuote Quote = new ZenQuote();
+
+            String quote = Quote.getQuoteText();
+            String quoteReplaced = replaceSpaces(quote);
+
             // Make a request to the Cataas API to get a random cat image
-            URL url = new URL("https://cataas.com/cat/says/hello%20my%20friend?fontSize=50&fontColor=white");
+            URL url = new URL("https://cataas.com/cat/says/" + quoteReplaced  + "?fontSize=50&fontColor=white");
             Image catImage = ImageIO.read(url);
 
             // Display the image in a JFrame
@@ -29,5 +32,9 @@ public class Cataas {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private String replaceSpaces (String input) {
+        return input.replaceAll(" ", "%20");
     }
 }

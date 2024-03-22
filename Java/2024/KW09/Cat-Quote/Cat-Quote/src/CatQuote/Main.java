@@ -6,19 +6,29 @@ import java.util.Scanner;
 
 public class Main {
     static boolean isRunning;
-    private static Scanner scan = new Scanner(System.in);
+    private static final Scanner scan = new Scanner(System.in);
+
+    private final static ZenQuote Quote = new ZenQuote();
+    private final Cataas Cat = new Cataas();
+    public static CataasWithText CataasWithText = new CataasWithText();
+
 
     public static void main(String[] args) throws IOException {
-        ZenQuote Quote = new ZenQuote();
-        Cataas Cat = new Cataas();
 
+
+    }
+
+
+    public void getImageAndQuote() throws IOException{
         boolean error;
 
         do {
             Quote.getQuote();
+            Quote.getQuoteText();
             Cat.getCat();
 
             do {
+
                 System.out.println("\n<m> more Quotes");
                 System.out.println("<q> quit");
 
@@ -37,3 +47,14 @@ public class Main {
         }while (isRunning);
     }
 }
+
+
+/*        Quote.getQuote();
+
+
+        CataasWithText.getCatWithText();
+
+        String result = Quote.getQuoteText();
+
+        System.out.println(result);
+        */
