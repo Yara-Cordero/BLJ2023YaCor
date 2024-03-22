@@ -1,7 +1,6 @@
 package CoordinateSystem;
 
 import java.awt.*;
-import javax.swing.JOptionPane;
 
 public class Starter {
     public static void main(String[] args) throws IllegalAccessException {
@@ -16,6 +15,7 @@ public class Starter {
         cs.addRectangle(new CSRectangle(100, 70, Color.MAGENTA , new CSPoint(70, 100)));
 
         cs.addTriangle(new CSTriangle(new CSPoint(30, 20), new CSPoint(50, 20), new CSPoint(45, 40), Color.BLUE));
+
         cs.addCircle(new CSCircle(new CSPoint(0, 0), 70, Color.PINK));
 
         cs.addPolygon(new CSPolygon(new CSPoint[]{ new CSPoint(125, 30),    // Top center

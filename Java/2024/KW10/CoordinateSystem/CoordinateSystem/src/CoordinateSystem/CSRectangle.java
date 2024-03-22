@@ -2,7 +2,7 @@ package CoordinateSystem;
 
 import java.awt.*;
 
-public class CSRectangle {
+public class CSRectangle implements Drawable{
 
     private final int sideA;
     private final int sideB;
@@ -15,6 +15,16 @@ public class CSRectangle {
         this.sideB = sideB;
         this.colorRectangle = colorRectangle;
         this.basePoint = basePoint;
+    }
+
+    @Override
+    public void draw(Graphics2D g2d, CSRenderer csr) {
+        g2d.setColor(colorRectangle);
+        CSPoint translatedBasePoint = csr.translatePoint(this.getBasePoint());
+        int translatedWidth = this.getSideA() * csr.getFieldScale();
+        int translatedHeight = this.getSideB() * csr.getFieldScale();
+
+        g2d.drawRect(translatedBasePoint.x, translatedBasePoint.y, translatedWidth, translatedHeight );
     }
 
     public CSPoint getBasePoint() {

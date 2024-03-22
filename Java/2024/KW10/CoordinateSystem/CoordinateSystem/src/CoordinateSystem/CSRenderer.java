@@ -82,6 +82,9 @@ public class CSRenderer extends JPanel {
   }
 
   private void initDrawables(){
+    drawables.addAll(cs.getPoints());
+    drawables.addAll(cs.getLineSegments());
+    drawables.addAll(cs.getRectangles());
     drawables.addAll(cs.getTriangles());
     drawables.addAll(cs.getCircles());
     drawables.addAll(cs.getPolygons());
@@ -120,36 +123,11 @@ public class CSRenderer extends JPanel {
 
     // all points
     g2d.setStroke(new BasicStroke(pointSize));
-    for (CSPoint point : cs.getAllPoints()) {
-      CSPoint translatedPoint = translatePoint(point);
-      g2d.setColor(point.getColorPoint());
-      g2d.drawLine(translatedPoint.x, translatedPoint.y, translatedPoint.x, translatedPoint.y);
-    }
 
-    // line
-    g2d.setStroke(new BasicStroke(pointSize));
-    for (CSLineSegment  lineSegment : cs.getLineSegments()) {
-      g2d.setColor(lineSegment.getColorLine());
-      CSPoint translatedStart = translatePoint(lineSegment.lineStart());
-      CSPoint translatedEnd = translatePoint(lineSegment.lineEnd());
-      g2d.drawLine(translatedStart.x, translatedStart.y, translatedEnd.x, translatedEnd.y);
-    }
-
-    //rectangle
-    g2d.setStroke(new BasicStroke(pointSize));
-    for(CSRectangle rectangle : cs.getRectangles()){
-      g2d.setColor(rectangle.getColorRectangle());
-      CSPoint translatedBasePoint = translatePoint(rectangle.getBasePoint());
-      int translatedWidth = rectangle.getSideA() * fieldScale;
-      int translatedHeight = rectangle.getSideB() * fieldScale;
-      g2d.drawRect(translatedBasePoint.x, translatedBasePoint.y,translatedWidth, translatedHeight);
-    }
 
     for (Drawable drawable : drawables){
       drawable.draw(g2d, this);
     }
-
-
 
   }
   /**
@@ -187,5 +165,9 @@ public class CSRenderer extends JPanel {
         }
       }
     });
+  }
+
+  public int getFieldScale() {
+    return fieldScale;
   }
 }

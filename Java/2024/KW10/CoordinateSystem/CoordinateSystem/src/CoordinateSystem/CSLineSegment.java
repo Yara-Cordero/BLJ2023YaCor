@@ -2,7 +2,7 @@ package CoordinateSystem;
 
 import java.awt.*;
 
-public class CSLineSegment {
+public class CSLineSegment implements Drawable {
 
     private static int count = 0;
     private final int id;
@@ -15,6 +15,15 @@ public class CSLineSegment {
         this.start = start;
         this.end = end;
         this.colorLine = colorLine;
+    }
+
+    @Override
+    public void draw(Graphics2D g2d, CSRenderer csr) {
+        g2d.setColor(colorLine);
+        CSPoint translatedStart = csr.translatePoint(this.lineStart());
+        CSPoint translatedEnd = csr.translatePoint(this.lineEnd());
+
+        g2d.drawLine(translatedStart.x, translatedStart.y, translatedEnd.x, translatedEnd.y);
     }
 
     public CSPoint lineStart(){
