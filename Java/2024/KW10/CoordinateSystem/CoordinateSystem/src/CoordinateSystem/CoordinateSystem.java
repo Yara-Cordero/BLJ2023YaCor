@@ -11,6 +11,7 @@ public class CoordinateSystem {
     private List<CSTriangle> triangles;
     private List<CSCircle> circles;
     private List<CSPolygon> polygons;
+    private List<CSPolyline> polylines;
     private List<Drawable> drawables;
 
 
@@ -25,6 +26,7 @@ public class CoordinateSystem {
         this.triangles = new ArrayList<>();
         this.circles = new ArrayList<>();
         this.polygons = new ArrayList<>();
+        this.polylines = new ArrayList<>();
         this.drawables = new ArrayList<>();
     }
 
@@ -56,6 +58,11 @@ public class CoordinateSystem {
     public void addPolygon(CSPolygon polygon){
         polygons.add(polygon);
         drawables.add(polygon);
+    }
+
+    public void addPolyline(CSPolyline polyline){
+        polylines.add(polyline);
+        drawables.add(polyline);
     }
 
     public List<CSPoint> getPoints() {

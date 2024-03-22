@@ -27,6 +27,13 @@ public class Starter {
                 new CSPoint(-50, -50)
         }, Color.CYAN));
 
+        cs.addPolyline(new CSPolyline(new CSPoint[] { new CSPoint(-100, -50),
+                new CSPoint(-50, 0),
+                new CSPoint(0, 50),
+                new CSPoint(50, 0),
+                new CSPoint(100, -50)
+        }, Color.GREEN));
+
         new CSRenderer(cs, 1, 3);
     }
 }
