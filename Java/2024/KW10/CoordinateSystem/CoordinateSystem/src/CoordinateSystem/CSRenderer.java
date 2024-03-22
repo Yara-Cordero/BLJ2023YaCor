@@ -33,7 +33,6 @@ public class CSRenderer extends JPanel {
   private final int OFFSET_MID;
   private final int OFFSET_END;
 
-  private ArrayList<Drawable> drawables = new ArrayList<>();
 
   /**
    * This constructor sets up the window where the coordinate system will be
@@ -50,7 +49,6 @@ public class CSRenderer extends JPanel {
     this.fieldScale = fieldScale;
     this.pointSize = pointSize;
 
-    this.initDrawables();
 
     OFFSET_MID = (size + fieldScale) / 2;
     OFFSET_END = size + (fieldScale / 2);
@@ -81,14 +79,6 @@ public class CSRenderer extends JPanel {
 
   }
 
-  private void initDrawables(){
-    drawables.addAll(cs.getPoints());
-    drawables.addAll(cs.getLineSegments());
-    drawables.addAll(cs.getRectangles());
-    drawables.addAll(cs.getTriangles());
-    drawables.addAll(cs.getCircles());
-    drawables.addAll(cs.getPolygons());
-  }
 
   /**
    * This method gets called automagically once the panel, where the coordinate
@@ -125,7 +115,7 @@ public class CSRenderer extends JPanel {
     g2d.setStroke(new BasicStroke(pointSize));
 
 
-    for (Drawable drawable : drawables){
+    for (Drawable drawable : cs.getDrawables()){
       drawable.draw(g2d, this);
     }
 

@@ -11,6 +11,7 @@ public class CoordinateSystem {
     private List<CSTriangle> triangles;
     private List<CSCircle> circles;
     private List<CSPolygon> polygons;
+    private List<Drawable> drawables;
 
 
     public CoordinateSystem(int coordinateSystemSize) throws IllegalAccessException {
@@ -24,30 +25,37 @@ public class CoordinateSystem {
         this.triangles = new ArrayList<>();
         this.circles = new ArrayList<>();
         this.polygons = new ArrayList<>();
+        this.drawables = new ArrayList<>();
     }
 
     public void addPoints(CSPoint csPoint){
         points.add(csPoint);
+        drawables.add(csPoint);
     }
 
     public void addLineSegment(CSLineSegment lineSegment){
         lineSegments.add(lineSegment);
+        drawables.add(lineSegment);
     }
 
     public void addRectangle(CSRectangle rectangle){
         rectangles.add(rectangle);
+        drawables.add(rectangle);
     }
 
     public void addTriangle(CSTriangle triangle){
         triangles.add(triangle);
+        drawables.add(triangle);
     }
 
     public void addCircle(CSCircle circle){
         circles.add(circle);
+        drawables.add(circle);
     }
 
     public void addPolygon(CSPolygon polygon){
         polygons.add(polygon);
+        drawables.add(polygon);
     }
 
     public List<CSPoint> getPoints() {
@@ -76,6 +84,10 @@ public class CoordinateSystem {
 
     public List<CSPolygon> getPolygons() {
         return polygons;
+    }
+
+    public List<Drawable> getDrawables() {
+        return drawables;
     }
 
     public int getCoordinateSystemSize() {
