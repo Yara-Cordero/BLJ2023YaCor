@@ -8,6 +8,7 @@ import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -16,7 +17,7 @@ import javax.swing.JPanel;
 /**
  * This class is responsible for visualising a given coordinate system in a
  * halfway pleasing way.
- * 
+ *
  * @author surber
  *
  */
@@ -29,9 +30,10 @@ public class CSRenderer extends JPanel {
   private final int fieldScale;
   private final int pointSize;
 
-
   private final int OFFSET_MID;
   private final int OFFSET_END;
+
+  private ArrayList<Drawable> drawables = new ArrayList<>();
 
   /**
    * This constructor sets up the window where the coordinate system will be
@@ -47,6 +49,8 @@ public class CSRenderer extends JPanel {
     this.size = cs.getCoordinateSystemSize() * fieldScale;
     this.fieldScale = fieldScale;
     this.pointSize = pointSize;
+
+    this.initDrawables();
 
     OFFSET_MID = (size + fieldScale) / 2;
     OFFSET_END = size + (fieldScale / 2);
@@ -75,6 +79,11 @@ public class CSRenderer extends JPanel {
   public CSRenderer(CoordinateSystem cs) {
     this(cs, 1, 3);
 
+  }
+
+  private void initDrawables(){
+    drawables.addAll(cs.getTriangles());
+    drawables.addAll(cs.getCircles());
   }
 
   /**
@@ -116,6 +125,7 @@ public class CSRenderer extends JPanel {
       g2d.drawLine(translatedPoint.x, translatedPoint.y, translatedPoint.x, translatedPoint.y);
     }
 
+    // line
     g2d.setStroke(new BasicStroke(pointSize));
     for (CSLineSegment  lineSegment : cs.getLineSegments()) {
       g2d.setColor(lineSegment.getColorLine());
@@ -124,6 +134,7 @@ public class CSRenderer extends JPanel {
       g2d.drawLine(translatedStart.x, translatedStart.y, translatedEnd.x, translatedEnd.y);
     }
 
+    //rectangle
     g2d.setStroke(new BasicStroke(pointSize));
     for(CSRectangle rectangle : cs.getRectangles()){
       g2d.setColor(rectangle.getColorRectangle());
@@ -132,6 +143,14 @@ public class CSRenderer extends JPanel {
       int translatedHeight = rectangle.getSideB() * fieldScale;
       g2d.drawRect(translatedBasePoint.x, translatedBasePoint.y,translatedWidth, translatedHeight);
     }
+
+
+    for (Drawable drawable : drawables){
+      drawable.draw(g2d, this);
+    }
+
+
+
   }
   /**
    * This method is responsible for converting a Java Swing absolute position
@@ -141,7 +160,7 @@ public class CSRenderer extends JPanel {
    * @param point The absolute point to convert.
    * @return The converted point.
    */
-  private CSPoint translatePoint(Point point) {
+  public CSPoint translatePoint(Point point) {
     return new CSPoint(point.x * fieldScale + size / 2, size / 2 - point.y * fieldScale);
   }
 

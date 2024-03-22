@@ -2,13 +2,15 @@ package CoordinateSystem;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.awt.Color;
 
 public class CoordinateSystem {
     private int coordinateSystemSize;
     private final List<CSPoint> points;
     private final List<CSLineSegment> lineSegments;
     private final List<CSRectangle> rectangles;
+    private List<CSTriangle> triangles;
+    private List<CSCircle> circles;
+
 
     public CoordinateSystem(int coordinateSystemSize) throws IllegalAccessException {
         if(coordinateSystemSize <= 0 || coordinateSystemSize % 20 != 0){
@@ -18,6 +20,8 @@ public class CoordinateSystem {
         this.points = new ArrayList<>();
         this.lineSegments = new ArrayList<>();
         this.rectangles = new ArrayList<>();
+        this.triangles = new ArrayList<>();
+        this.circles = new ArrayList<>();
     }
 
     public void addPoints(CSPoint csPoint){
@@ -30,6 +34,14 @@ public class CoordinateSystem {
 
     public void addRectangle(CSRectangle rectangle){
         rectangles.add(rectangle);
+    }
+
+    public void addTriangle(CSTriangle triangle){
+        triangles.add(triangle);
+    }
+
+    public void addCircle(CSCircle circle){
+        circles.add(circle);
     }
 
     public List<CSPoint> getPoints() {
@@ -46,6 +58,14 @@ public class CoordinateSystem {
 
     public List<CSRectangle> getRectangles(){
         return rectangles;
+    }
+
+    public List<CSTriangle> getTriangles(){
+        return triangles;
+    }
+
+    public List<CSCircle> getCircles() {
+        return circles;
     }
 
     public int getCoordinateSystemSize() {

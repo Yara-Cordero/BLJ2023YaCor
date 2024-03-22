@@ -6,32 +6,28 @@ import java.awt.Color;
 
 public class CSPoint extends Point {
 
-    private static int count = 0;
-    private int id;
-    private Color colorPoint;
-
-    public CSPoint() {
-        this(0,0);
-    }
+        private static int count = 0;
+        private final int id;
+        private Color colorPoint;
 
     public CSPoint(int x, int y) {
-        super(x, y);
-        this.id = count++;
-    }
+            super(x, y);
+            this.id = count++;
+        }
 
     public CSPoint(int x, int y, Color colorPoint) {
-        super(x, y);
-        this.id = count++;
-        this.colorPoint = colorPoint;
-    }
+            super(x, y);
+            this.id = count++;
+            this.colorPoint = colorPoint;
+        }
 
-    public Color getColorPoint() {
-        return colorPoint;
-    }
+        public Color getColorPoint() {
+            return colorPoint;
+        }
 
-    public int getId() {
-        return id;
-    }
+        public int getId() {
+            return id;
+        }
 
     @Override
     public String toString() {
