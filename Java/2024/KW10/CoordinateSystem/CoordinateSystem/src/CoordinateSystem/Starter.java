@@ -32,7 +32,7 @@ public class Starter {
                 new CSPoint(0, 50),
                 new CSPoint(50, 0),
                 new CSPoint(100, -50)
-        }, Color.GREEN));
+        }, Color.MAGENTA));
 
         new CSRenderer(cs, 1, 3);
     }
