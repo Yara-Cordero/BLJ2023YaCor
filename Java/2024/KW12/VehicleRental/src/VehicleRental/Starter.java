@@ -15,7 +15,8 @@ public class Starter {
         initializeAll(vrm);
 
         try {
-            Contract c1 = new Contract(vrm.getPerson("Anik", "Stadelmann"), vrm.getVehicle("Mercedes-Benz", "S-Class"), LocalDate.now(), LocalDate.now().plusDays(14), "valid until: see end date.");
+            Contract c1 = new Contract(vrm.getPerson("Anik", "Stadelmann"), vrm.getVehicle("Boeckmann", ""), LocalDate.now(), LocalDate.now().plusDays(14), "valid until: see end date.");
+            vrm.addContract(c1);
         } catch (LeaseLengthCollisionException | MinorAgeException e) {
             System.out.println(e.getMessage());
         }
@@ -28,7 +29,7 @@ public class Starter {
         Person p1 = new Person("Anik", "Stadelmann", LocalDate.of(2006,9,19), "0764534368", "blabla@adasd" );
         vrm.addCustomer(p1);
 
-        LuxuryCar mercedesSClass = new LuxuryCar("Mercedes-Benz","Silver",LocalDate.of(2023, 1, 1),
+        LuxuryCar mercedesSClass = new LuxuryCar("Mercedes-Benz","Silver", LocalDate.of(2023, 1, 1),
                 "Sedan",2200,"S-Class","V8","Gasoline",5,4,true,155);
         vrm.addVehicle(mercedesSClass);
 
@@ -80,8 +81,8 @@ public class Starter {
                 "e-Crafter", "Electric", "Electric", 3, 2, true, 115);
         vrm.addVehicle(vwECrafter);
 
-        Camper vwCalifornia = new Camper("Volkswagen", "White", LocalDate.of(2023, 1, 1), "Camper Van", 2500, "California",
-                "V6", "Diesel", 4, 2, true, 120, true, 2, true, true, true);
+        Camper vwCalifornia = new Camper("Volkswagen", "White", LocalDate.of(2023, 1, 1), "Camper Van", 2500
+                , "California", "V6", "Diesel", 4, 2, true, 120, true, 2, true, true, true);
         vrm.addVehicle(vwCalifornia);
 
         Camper hymermobil = new Camper("Hymer", "White", LocalDate.of(2023, 1, 1), "Hymermobil", 3500,
@@ -89,16 +90,16 @@ public class Starter {
                 true, 2, true, true, true);
         vrm.addVehicle(hymermobil);
 
-        Trailer hochlader = new Trailer("Hochlader","Böckmann", "Red", LocalDate.of(2022, 1, 1), "für Heissluftballon"
+        Trailer hochlader = new Trailer("Hochlader","Boeckmann", "Red", LocalDate.of(2022, 1, 1), "für Heissluftballon"
                 , 1500
         );
         vrm.addVehicle(hochlader);
 
-        Trailer bootanhaenger = new Trailer("Bootanhaenger","Böckmann", "Blue", LocalDate.of(2022, 1, 1) ,"für Boot", 2000
+        Trailer bootanhaenger = new Trailer("Bootanhaenger","Boeckmann", "Blue", LocalDate.of(2022, 1, 1) ,"für Boot", 2000
         );
         vrm.addVehicle(bootanhaenger);
 
-        Trailer tieflader = new Trailer("Tieflader","Böckmann", "Yellow", LocalDate.of(2022, 1, 1),"für Velos"
+        Trailer tieflader = new Trailer("Tieflader","Boeckmann", "Yellow", LocalDate.of(2022, 1, 1),"für Velos"
                 , 1800
         );
         vrm.addVehicle(tieflader);
