@@ -1,7 +1,9 @@
 package VehicleRental;
 
 
+import VehicleRental.Exceptions.LeaseLengthCollisionException;
 import VehicleRental.Exceptions.MinorAgeException;
+import VehicleRental.Vehicles.Vehicle;
 
 import java.time.LocalDate;
 
@@ -13,17 +15,20 @@ public class Contract {
     private LocalDate endDate;
     private String contractTerms;
 
-    public Contract(Person customer, Vehicle vehicle, LocalDate startDate, LocalDate endDate, String contractTerms) throws MinorAgeException {
+    public Contract(Person customer, Vehicle vehicle, LocalDate startDate, LocalDate endDate, String contractTerms) throws MinorAgeException, LeaseLengthCollisionException {
         if(customer.getAge() < 18){
             throw new MinorAgeException("Customer is under the legal age limit.");
         }
 
+
+
         VehicleRentalManager vrm = new VehicleRentalManager();
 
         for (Contract existingContract : vrm.getContracts()){
-            if(startDate.isBefore(existingContract.getEndDate()) && endDate.isAfter(existingContract.getStartDate()));
+            if(startDate.isBefore(existingContract.getEndDate()) && endDate.isAfter(existingContract.getStartDate()));{
+                throw new LeaseLengthCollisionException();
+            }
         }
-
         this.customer = customer;
         this.vehicle = vehicle;
         this.startDate = startDate;

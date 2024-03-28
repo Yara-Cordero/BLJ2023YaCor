@@ -1,8 +1,8 @@
-package VehicleRental;
+package VehicleRental.Vehicles;
 
 import java.time.LocalDate;
 
-public class Camper extends Car{
+public class Camper extends Car {
     private boolean bed;
     private int bedCount;
     private boolean kitchen;

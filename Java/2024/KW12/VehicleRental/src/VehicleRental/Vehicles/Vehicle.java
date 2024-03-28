@@ -1,9 +1,10 @@
-package VehicleRental;
+package VehicleRental.Vehicles;
 
 import java.time.LocalDate;
 
 public class Vehicle {
 
+    private String name;
     private String brand;
     private String color;
     private LocalDate releaseDate;
@@ -13,7 +14,8 @@ public class Vehicle {
     public Vehicle() {
     }
 
-    public Vehicle(String brand, String color, LocalDate releaseDate, String type, int weightLimit) {
+    public Vehicle(String name, String brand, String color, LocalDate releaseDate, String type, int weightLimit) {
+        this.name = name;
         this.brand = brand;
         this.color = color;
         this.releaseDate = releaseDate;
@@ -59,5 +61,13 @@ public class Vehicle {
 
     public void setWeightLimit(int weightLimit) {
         this.weightLimit = weightLimit;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

@@ -1,9 +1,8 @@
-package VehicleRental;
+package VehicleRental.Vehicles;
 
 import java.time.LocalDate;
 
-public class Car extends Vehicle{
-    private String name;
+public class Car extends Vehicle {
     private String engine;
     private String energySupply;
     private int seatCount;
@@ -16,22 +15,13 @@ public class Car extends Vehicle{
 
     public Car(String brand, String color, LocalDate releaseDate, String type, int weightLimit,
                String name, String engine, String energySupply, int seatCount, int doorCount, boolean automatic, int topSpeed) {
-        super(brand, color, releaseDate, type, weightLimit);
-        this.name = name;
+        super(name, brand, color, releaseDate, type, weightLimit);
         this.engine = engine;
         this.energySupply = energySupply;
         this.seatCount = seatCount;
         this.doorCount = doorCount;
         this.automatic = automatic;
         this.topSpeed = topSpeed;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getEngine() {
