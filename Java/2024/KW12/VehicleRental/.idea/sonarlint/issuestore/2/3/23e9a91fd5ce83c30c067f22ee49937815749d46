@@ -1,0 +1,10 @@
+
+C
+java:S1199"-Extract this nested code block into a method.(æÚ¡Œ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‹›Åğ
+‘
+java:S2681"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(æÚ¡Œ
+2
+java:S1116"Remove this empty statement.(æÚ¡Œ
+K
+java:S1751"5Remove this "throw" statement or make it conditional.(ïèîï

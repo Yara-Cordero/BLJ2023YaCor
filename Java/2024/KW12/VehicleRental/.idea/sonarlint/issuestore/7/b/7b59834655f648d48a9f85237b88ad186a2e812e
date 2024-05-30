@@ -1,0 +1,19 @@
+
+f
+java:S1192D"KDefine a constant instead of duplicating this literal "Volkswagen" 3 times.(¡àğÊıÿÿÿÿ
+d
+java:S1192)"IDefine a constant instead of duplicating this literal "Inline-4" 4 times.(éäüÕıÿÿÿÿ
+_
+java:S1192M"IDefine a constant instead of duplicating this literal "Electric" 4 times.(à€™ì
+\
+java:S1192("FDefine a constant instead of duplicating this literal "White" 5 times.(µ¬Ä‡
+`
+java:S1192"JDefine a constant instead of duplicating this literal "Boeckmann" 4 times.(¦³Öâ
+b
+java:S1192%"GDefine a constant instead of duplicating this literal "Petrol" 6 times.(³¢èåıÿÿÿÿ
+b
+java:S1192A"GDefine a constant instead of duplicating this literal "Diesel" 5 times.(»Ãë´ıÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‹›Åğ
+E	java:S106"+Replace this use of System.out by a logger.(©şêÜúÿÿÿÿ
+e
+java:S1128"ORemove this unused import 'VehicleRental.Exceptions.DenylistedPersonException'.(¯¿—Í

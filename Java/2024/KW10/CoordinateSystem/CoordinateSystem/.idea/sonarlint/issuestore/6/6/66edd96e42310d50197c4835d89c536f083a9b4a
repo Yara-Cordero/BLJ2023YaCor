@@ -1,0 +1,10 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(æ„Ãäùÿÿÿÿ
+i	java:S116!"URename this field "OFFSET_MID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(å©¶9
+j	java:S116""URename this field "OFFSET_END" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁÃü«
+:
+java:S1948"$Make "cs" transient or serializable.(°¦Ï‰
+_
+java:S3252="IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(Â÷‚À
+F
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ

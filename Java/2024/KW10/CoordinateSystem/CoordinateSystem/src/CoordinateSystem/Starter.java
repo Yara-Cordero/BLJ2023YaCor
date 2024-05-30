@@ -10,6 +10,7 @@ public class Starter {
         cs.addPoints(new CSPoint(0, 0, Color.MAGENTA)); // Center
         cs.addPoints(new CSPoint(-150, 150, Color.BLUE)); // Top left
         cs.addPoints(new CSPoint(150, -150, Color.GREEN)); // Bottom right
+        cs.addPoints(new CSPoint(100, 100));
 
         cs.addLineSegment(new CSLineSegment(new CSPoint(-100, -150), new CSPoint(100, 150), Color.RED)); // Diagonal
 
@@ -34,6 +35,6 @@ public class Starter {
                 new CSPoint(100, -50)
         }, Color.MAGENTA));
 
-        new CSRenderer(cs, 1, 3);
+        new CSRenderer(cs, 1, 4);
     }
 }
