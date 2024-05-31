@@ -1,12 +1,18 @@
-import { styled, alpha } from '@mui/material/styles';
+import { styled, alpha, createTheme } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
+import { Typography, Menu, MenuItem } from '@mui/material';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+const theme = createTheme({
+  typography: {
+    fontFamily: 'Bebas Neue, Arial',
+  },
+});
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -51,33 +57,80 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function SearchAppBar() {
+  const navigate = useNavigate();
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const handleMenuOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleMenuItemClick = (route) => {
+    navigate(route);
+    handleMenuClose();
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="fixed" sx={{ backgroundColor: 'white', color: '#e10600' }}>
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
           <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            sx={{ fontFamily: 'Bebas Neue', fontSize: '40px', marginRight: '20px', cursor: 'pointer' }}
+            onClick={() => navigate("/")}
           >
-            MUI
+            F1 NOW
           </Typography>
-          <Search>
+          <Typography
+            sx={{ fontFamily: 'Bebas Neue', fontSize: '20px', marginRight: '20px', cursor: 'pointer' }}
+            onClick={handleMenuOpen}
+          >
+            Standings
+          </Typography>
+          <Menu
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            onClose={handleMenuClose}
+          >
+            <MenuItem
+              onClick={() => handleMenuItemClick("/standings/driver")}
+              sx={{ fontFamily: 'Bebas Neue', color: '#e10600' }}
+            >
+              Drivers
+            </MenuItem>
+            <MenuItem
+              onClick={() => handleMenuItemClick("/standings/constructor")}
+              sx={{ fontFamily: 'Bebas Neue', color: '#e10600' }}
+            >
+              Constructors
+            </MenuItem>
+          </Menu>
+          <Typography
+          sx={{ fontFamily: 'Bebas Neue', fontSize: '20px', marginRight: '20px', cursor: 'pointer' }}
+          onClick={() => navigate("/race")}
+          >
+            Races
+          </Typography>
+          <Typography
+          sx={{ fontFamily: 'Bebas Neue', fontSize: '20px', marginRight: '20px', cursor: 'pointer' }}
+          onClick={() => navigate("/race")}
+          >
+            Drivers
+          </Typography>
+          <Typography
+          sx={{ fontFamily: 'Bebas Neue', fontSize: '20px', marginRight: '50px', cursor: 'pointer' }}
+          onClick={() => navigate("/constructor")}
+          >
+            Teams
+          </Typography>
+          <Search sx={{ color: 'black'}}>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="Search…"
+              placeholder="Search"
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
