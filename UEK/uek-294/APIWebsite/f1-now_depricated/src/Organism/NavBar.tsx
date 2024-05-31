@@ -1,5 +1,5 @@
-import { AppBar, Toolbar, Typography } from '@mui/material'
-
+import { AppBar, Button, Toolbar, Typography } from '@mui/material'
+import React from 'react'
 
 function NavBar() {
   return (
