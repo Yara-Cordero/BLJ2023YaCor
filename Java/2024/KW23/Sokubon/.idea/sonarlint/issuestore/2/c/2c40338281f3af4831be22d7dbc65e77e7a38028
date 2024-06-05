@@ -1,0 +1,8 @@
+
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(œ¹ÆÌ8ŽŸ©Âþ1
+p
+java:S1948"-Make "displayArea" transient or serializable.(Êÿ°¨8‚ÖŠ¿þ1J$d47181fc-a6b9-4841-819c-ecbc6117a970
+r
+java:S1948"*Make "inputMap" transient or serializable.(œàªÊüÿÿÿÿ8‚ÖŠ¿þ1J$b71e56d3-3efb-4677-9ff4-7d05e4579668
+‹
+java:S32521"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(ºÀœx8‰ÖŠ¿þ1J$85e96efb-4761-4d96-8b89-fc17463d3939

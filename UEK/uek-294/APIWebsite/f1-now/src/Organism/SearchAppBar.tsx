@@ -115,7 +115,7 @@ export default function SearchAppBar() {
           </Typography>
           <Typography
           sx={{ fontFamily: 'Bebas Neue', fontSize: '20px', marginRight: '20px', cursor: 'pointer' }}
-          onClick={() => navigate("/race")}
+          onClick={() => navigate("/driver")}
           >
             Drivers
           </Typography>

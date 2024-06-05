@@ -1,43 +1,37 @@
 import { Grid, Typography } from "@mui/material"
 
-
-type DriverInfo = {
+type ConstructorInfo = {
     position: string,
-    name: string,
     team: string,
     points: string
 }
 
-function DriverStandingInfo ( { position, name, team, points} : DriverInfo) {
-
+function ConstructorStandingInfo ( { position, team, points } : ConstructorInfo) {
 
     return (
-        <Grid item xs={12} className="driverStandingInfo" sx={{margin: '20px'}}>
+        <>
+        <Grid  item xs={12} className="constructorStandingInfo" sx={{margin: '20px'}}>
             <Grid container spacing={1}>
                 <Grid item xs={1}>
                     <Typography sx={{ fontFamily: 'Bebas Neue', fontSize: '30px' , textAlign: 'left'}}>
-                        {position}  
+                            {position} 
                     </Typography>
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={2}>
                     <Typography sx={{ fontFamily: 'Bebas Neue', fontSize: '30px' , textAlign: 'left'}}>
-                        {name}
+                            {team}
                     </Typography>
                 </Grid>
-                <Grid item xs={5}>
-                    <Typography sx={{ fontFamily: 'Bebas Neue', fontSize: '30px' , textAlign: 'left'}}>
-                        {team}
-                    </Typography>
-                </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={9}>
                     <Typography sx={{ fontFamily: 'Bebas Neue', fontSize: '30px' , textAlign: 'right'}}>
-                        {points} PTS
+                            {points} PTS
                     </Typography>
                 </Grid>
 
             </Grid>
         </Grid>
+        </>
     )
 }
 
-export default DriverStandingInfo
+export default ConstructorStandingInfo
