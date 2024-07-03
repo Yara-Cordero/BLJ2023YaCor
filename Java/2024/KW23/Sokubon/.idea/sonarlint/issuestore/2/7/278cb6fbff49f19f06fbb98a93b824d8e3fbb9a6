@@ -1,15 +1,15 @@
 
-v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(œ¹ÆÌ8ú¨Âş1
-š
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 41 to the 15 allowed.(Û”Õ¼øÿÿÿÿ8„£†Âş1J$2abdca1b-b32b-48fe-beb0-cc4f17edd60f
-r	java:S106"+Replace this use of System.out by a logger.(ïœé™ıÿÿÿÿ8…£†Âş1J$908028e9-89a8-4e61-bbb4-00ca7d79a8d6
-•
-java:S3776S"RRefactor this method to reduce its Cognitive Complexity from 41 to the 15 allowed.(úù°¤8…£†Âş1J$12e00d67-70cf-4f7e-b801-0bffd0458886
-r	java:S106T"+Replace this use of System.out by a logger.(ê‡×äûÿÿÿÿ8†£†Âş1J$600a8af0-e369-4a28-b267-0c453b243ddc
-–
-java:S3776Œ"RRefactor this method to reduce its Cognitive Complexity from 41 to the 15 allowed.(­ù¿ô8†£†Âş1J$f3a2e8a7-342e-4580-a69a-8cfd0a633577
-s	java:S106"+Replace this use of System.out by a logger.(€±Ğøÿÿÿÿ8‡£†Âş1J$d2d55ceb-9f0d-499c-9558-85819812e4bb
-–
-java:S3776Å"RRefactor this method to reduce its Cognitive Complexity from 41 to the 15 allowed.(ÍÀ°§8‡£†Âş1J$4859603c-60c1-42e5-9468-8d2c7d72078e
-s	java:S106Æ"+Replace this use of System.out by a logger.(­­¥Üúÿÿÿÿ8‡£†Âş1J$255405e5-b7e0-4510-8ea8-bf00a42d997b
-n	java:S106€"+Replace this use of System.out by a logger.(´ë¶ò8ˆ£†Âş1J$524c16bc-353d-4184-b2a9-975ecda25ddf
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(œ¹ÆÌ8…È±”ÿ1
+t
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 61 to the 15 allowed.(Û”Õ¼øÿÿÿÿ8ÉÉ±”ÿ1
+L	java:S106"+Replace this use of System.out by a logger.(ïœé™ıÿÿÿÿ8ÊÉ±”ÿ1
+o
+java:S3776n"RRefactor this method to reduce its Cognitive Complexity from 61 to the 15 allowed.(úù°¤8ËÉ±”ÿ1
+L	java:S106o"+Replace this use of System.out by a logger.(ê‡×äûÿÿÿÿ8ËÉ±”ÿ1
+p
+java:S3776Á"RRefactor this method to reduce its Cognitive Complexity from 61 to the 15 allowed.(­ù¿ô8ÌÉ±”ÿ1
+M	java:S106Â"+Replace this use of System.out by a logger.(€±Ğøÿÿÿÿ8ÌÉ±”ÿ1
+p
+java:S3776”"RRefactor this method to reduce its Cognitive Complexity from 61 to the 15 allowed.(ÍÀ°§8ÍÉ±”ÿ1
+M	java:S106•"+Replace this use of System.out by a logger.(­­¥Üúÿÿÿÿ8ÍÉ±”ÿ1
+H	java:S106é"+Replace this use of System.out by a logger.(´ë¶ò8ÎÉ±”ÿ1

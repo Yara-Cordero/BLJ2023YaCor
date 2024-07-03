@@ -21,6 +21,7 @@ public class Game {
             { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
     };
   }
+
   
   public void moveUp() {
     System.out.println("UP");
@@ -53,6 +54,19 @@ public class Game {
               gameField[x - 2][y] = 3;
               return;
             }
+            if (gameField[x - 1][y] == 7 && gameField[x - 2][y] == 4) {
+              gameField[x][y] = 0;
+              gameField[x - 1][y] = 2;
+              gameField[x - 2][y] = 7;
+              return;
+            }
+            // Move box with empty space
+            if (gameField[x - 1][y] == 7 && gameField[x - 2][y] == 0) {
+              gameField[x][y] = 0;
+              gameField[x - 1][y] = 2;
+              gameField[x - 2][y] = 3;
+              return;
+            }
           }
           // special case of 6
           if (gameField[x][y] == 6) {
@@ -70,6 +84,19 @@ public class Game {
             }
             // Move box with empty space
             if (gameField[x - 1][y] == 3 && gameField[x - 2][y] == 0) {
+              gameField[x][y] = 4;
+              gameField[x - 1][y] = 2;
+              gameField[x - 2][y] = 3;
+              return;
+            }
+            if (gameField[x - 1][y] == 7 && gameField[x - 2][y] == 4) {
+              gameField[x][y] = 4;
+              gameField[x - 1][y] = 2;
+              gameField[x - 2][y] = 7;
+              return;
+            }
+            // Move box with empty space
+            if (gameField[x - 1][y] == 7 && gameField[x - 2][y] == 0) {
               gameField[x][y] = 4;
               gameField[x - 1][y] = 2;
               gameField[x - 2][y] = 3;
@@ -111,6 +138,19 @@ public class Game {
             gameField[x + 2][y] = 3;
             return;
           }
+          if (gameField[x + 1][y] == 7 && gameField[x + 2][y] == 4) {
+            gameField[x][y] = 0;
+            gameField[x + 1][y] = 2;
+            gameField[x + 2][y] = 7;
+            return;
+          }
+          // Move box with empty space
+          if (gameField[x + 1][y] == 7 && gameField[x + 2][y] == 0) {
+            gameField[x][y] = 0;
+            gameField[x + 1][y] = 2;
+            gameField[x + 2][y] = 3;
+            return;
+          }
         }
         // special case of 6
         if (gameField[x][y] == 6) {
@@ -127,6 +167,19 @@ public class Game {
           }
           // Move box with empty space
           if (gameField[x + 1][y] == 3 && gameField[x + 2][y] == 0) {
+            gameField[x][y] = 4;
+            gameField[x + 1][y] = 2;
+            gameField[x + 2][y] = 3;
+            return;
+          }
+          if (gameField[x + 1][y] == 7 && gameField[x + 2][y] == 4) {
+            gameField[x][y] = 4;
+            gameField[x + 1][y] = 2;
+            gameField[x + 2][y] = 7;
+            return;
+          }
+          // Move box with empty space
+          if (gameField[x + 1][y] == 7 && gameField[x + 2][y] == 0) {
             gameField[x][y] = 4;
             gameField[x + 1][y] = 2;
             gameField[x + 2][y] = 3;
@@ -168,6 +221,19 @@ public class Game {
             gameField[x][y - 2] = 3;
             return;
           }
+          if (gameField[x][y - 1] == 7 && gameField[x][y - 2] == 4) {
+            gameField[x][y] = 0;
+            gameField[x][y - 1] = 2;
+            gameField[x][y - 2] = 7;
+            return;
+          }
+          // Move box with empty space
+          if (gameField[x][y - 1] == 7 && gameField[x][y - 2] == 0) {
+            gameField[x][y] = 0;
+            gameField[x][y - 1] = 2;
+            gameField[x][y - 2] = 3;
+            return;
+          }
         }
         // special case of 6
         if (gameField[x][y] == 6) {
@@ -185,6 +251,19 @@ public class Game {
           }
           // Move box with empty space
           if (gameField[x][y - 1] == 3 && gameField[x][y - 2] == 0) {
+            gameField[x][y] = 4;
+            gameField[x][y - 1] = 2;
+            gameField[x][y - 2] = 3;
+
+          }
+          if (gameField[x][y - 1] == 7 && gameField[x][y - 2] == 4) {
+            gameField[x][y] = 4;
+            gameField[x][y - 1] = 2;
+            gameField[x][y - 2] = 7;
+            return;
+          }
+          // Move box with empty space
+          if (gameField[x][y - 1] == 7 && gameField[x][y - 2] == 0) {
             gameField[x][y] = 4;
             gameField[x][y - 1] = 2;
             gameField[x][y - 2] = 3;
@@ -225,6 +304,19 @@ public class Game {
             gameField[x][y + 2] = 3;
             return;
           }
+          if (gameField[x][y + 1] == 7 && gameField[x][y + 2] == 4) {
+            gameField[x][y] = 0;
+            gameField[x][y + 1] = 2;
+            gameField[x][y + 2] = 7;
+            return;
+          }
+          // move box with empty space
+          if (gameField[x][y + 1] == 7 && gameField[x][y + 2] == 0) {
+            gameField[x][y] = 0;
+            gameField[x][y + 1] = 2;
+            gameField[x][y + 2] = 3;
+            return;
+          }
         }
         // special case of 6
         if (gameField[x][y] == 6) {
@@ -241,6 +333,19 @@ public class Game {
           }
           // move box with empty space
           if (gameField[x][y + 1] == 3 && gameField[x][y +2] == 0) {
+            gameField[x][y] = 4;
+            gameField[x][y + 1] = 2;
+            gameField[x][y + 2] = 3;
+            return;
+          }
+          if (gameField[x][y + 1] == 7 && gameField[x][y +2] == 4){
+            gameField[x][y] = 4;
+            gameField[x][y + 1] = 2;
+            gameField[x][y + 2] = 7;
+            return;
+          }
+          // move box with empty space
+          if (gameField[x][y + 1] == 7 && gameField[x][y +2] == 0) {
             gameField[x][y] = 4;
             gameField[x][y + 1] = 2;
             gameField[x][y + 2] = 3;

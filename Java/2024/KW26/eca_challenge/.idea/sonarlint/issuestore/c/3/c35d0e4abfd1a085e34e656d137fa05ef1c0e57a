@@ -1,0 +1,17 @@
+
+H
+java:S1948"+Make "automaton" transient or serializable.(Ì·¦õ8ÆŞô…2
+—
+java:S3252'"[Use static access with "javax.swing.ScrollPaneConstants" for "HORIZONTAL_SCROLLBAR_ALWAYS".(££è‹J$165e2ef4-b012-4ca1-92e5-649a1d4b9f11
+•
+java:S3252("YUse static access with "javax.swing.ScrollPaneConstants" for "VERTICAL_SCROLLBAR_ALWAYS".(ìæ¢›J$1ce01f54-283a-4e8b-a2d7-f0c1a78d0a66
+…
+java:S3252+"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(Â÷‚ÀJ$512438af-6989-4db7-b901-967e91dbcfe0
+~
+java:S3252/"=Use static access with "java.awt.Frame" for "MAXIMIZED_BOTH".(Ú§¾ĞıÿÿÿÿJ$88456655-5da8-4374-b22d-caa2eed09878
+U
+java:S1128"3Remove this unused import 'javax.swing.JComponent'.(²Ü¥–øÿÿÿÿ8ÜÆŞô…2
+P
+java:S1128"3Remove this unused import 'javax.swing.JScrollBar'.(êº§è8İÆŞô…2
+O
+java:S1128"2Remove this unused import 'javax.swing.KeyStroke'.(µ©ı8İÆŞô…2

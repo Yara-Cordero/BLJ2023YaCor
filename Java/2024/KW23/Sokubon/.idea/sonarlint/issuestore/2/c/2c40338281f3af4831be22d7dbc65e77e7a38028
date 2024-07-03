@@ -1,8 +1,12 @@
 
-v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(œ¹ÆÌ8Ÿ©Âş1
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(œ¹ÆÌ8Ÿ©Âş1J$455be042-938c-422f-84d6-a42e9932f10b
+H
+java:S1948"&Make "game" transient or serializable.(Ä¿–øÿÿÿÿ8åù“ÿ1
 p
-java:S1948"-Make "displayArea" transient or serializable.(Êÿ°¨8‚ÖŠ¿ş1J$d47181fc-a6b9-4841-819c-ecbc6117a970
+java:S1948"-Make "displayArea" transient or serializable.(Êÿ°¨8‚ÖŠ¿ş1J$5ce386a6-73a2-473c-9f83-7a376c1ce52e
 r
-java:S1948"*Make "inputMap" transient or serializable.(œàªÊüÿÿÿÿ8‚ÖŠ¿ş1J$b71e56d3-3efb-4677-9ff4-7d05e4579668
+java:S1948"*Make "inputMap" transient or serializable.(œàªÊüÿÿÿÿ8‚ÖŠ¿ş1J$58dd0d2d-52b4-455b-b910-b8de690fa955
 ‹
-java:S32521"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(ºÀœx8‰ÖŠ¿ş1J$85e96efb-4761-4d96-8b89-fc17463d3939
+java:S32521"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(ºÀœx8‰ÖŠ¿ş1J$5953f8b5-26a4-4a41-a4f4-cfc28c84a939
+q
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(Ì±ô8•åù“ÿ1

@@ -73,6 +73,8 @@ export default function SearchAppBar() {
     handleMenuClose();
   };
 
+   
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" sx={{ backgroundColor: 'white', color: '#e10600' }}>
