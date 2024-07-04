@@ -1,16 +1,19 @@
 package org.example;
 
 import java.util.Hashtable;
+import java.util.Scanner;
 
 public class Room {
 
-    public String name;
-    public String desc;
-    public Hashtable<String, Exit> exits;
+    private String name;
+    private String desc;
+    private Hashtable<String, Exit> exits;
+    private boolean visited;
 
     public Room(String name) {
         this.name = name;
         this.exits = new Hashtable<>();
+        this.visited = false;
     }
 
     public String getName() {
@@ -22,7 +25,17 @@ public class Room {
     }
 
     public String describe(){
-        return desc;
+        if (!visited){
+            visited = true;
+            GameState.instance().visit(this);
+            StringBuilder description = new StringBuilder(name + "\n" + desc +  "\nExits:");
+            for(String dir : exits.keySet()) {
+                description.append(" ").append(dir);
+            }
+            return description.toString();
+        } else {
+            return name;
+        }
     }
 
     public void addExit(Exit exit){
@@ -35,5 +48,11 @@ public class Room {
             return exit.getDest();
         }
         return null;
+    }
+
+    public class NoRoomException extends Exception {
+        public NoRoomException(String errorMessage) {
+            super(errorMessage);
+        }
     }
 }

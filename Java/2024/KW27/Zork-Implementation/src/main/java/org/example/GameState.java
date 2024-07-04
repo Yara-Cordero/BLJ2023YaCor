@@ -44,4 +44,10 @@ class GameState {
     public boolean hasBeenVisited(Room room){
         return visited.contains(room);
     }
+
+    public class IllegalSaveFormatException extends Exception {
+        public IllegalSaveFormatException(String errorMessage) {
+            super(errorMessage);
+        }
+    }
 }

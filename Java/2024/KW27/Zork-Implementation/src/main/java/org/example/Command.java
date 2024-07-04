@@ -9,6 +9,15 @@ class Command {
     }
 
     public String execute(){
-        return dir;
+        Room currentRoom = GameState.instance().getAdventurersCurrentRoom();
+        Room nextRoom = currentRoom.leaveBy(dir);
+
+        if (nextRoom != null){
+            GameState.instance().setAdventurersCurrentRoom(nextRoom);
+            return "You move " + dir + " to the " + nextRoom.getName();
+
+        }else {
+            return "You can't " + dir + " from here";
+        }
     }
 }

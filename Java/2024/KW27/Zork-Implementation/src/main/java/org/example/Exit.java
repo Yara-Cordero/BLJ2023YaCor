@@ -1,6 +1,8 @@
 package org.example;
 
+import java.io.BufferedReader;
 import java.util.Hashtable;
+import java.util.Scanner;
 
 public class Exit {
 
@@ -14,6 +16,7 @@ public class Exit {
         this.dest = dest;
     }
 
+
     public String getDir() {
         return dir;
     }
@@ -24,5 +27,12 @@ public class Exit {
 
     public Room getDest() {
         return dest;
+    }
+
+
+    public class NoExitException extends Exception {
+        public NoExitException(String errorMessage) {
+            super(errorMessage);
+        }
     }
 }

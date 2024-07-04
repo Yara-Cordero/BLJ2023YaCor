@@ -17,3 +17,11 @@ S
 #src/main/java/org/example/Exit.java,d\8\d8e7ffd8392d823d04ea5238e2fb0269cf0771c4
 V
 &src/main/java/org/example/Dungeon.java,b\f\bf8189fa68309ffd33db4729403c8d06494982b8
+O
+src/main/java/files/simple.zork,3\3\3339844c9353bb169c3149f8fd564c096a5c2288
+U
+%src/main/java/org/example/simple.zork,2\7\27554b43799c3c0f67aae2acaab1cbdb8a9d66e2
+T
+$src/main/java/org/example/simple.txt,6\1\61d006a155f5a935983dc8c24431f1f4b8ec8c44
+C
+settings.gradle.kts,7\4\749edfcc96398253e5b3416184e95c46621da850

@@ -1,0 +1,16 @@
+
+’
+java:S1104
+"OMake dir a static final constant or non-public and provide accessors if needed.(Φφ«χ8καδι‡2J$0682a47d-141d-4612-807d-e36619f9b329
+’
+java:S1104"OMake src a static final constant or non-public and provide accessors if needed.(τ‚―μ8καδι‡2J$3ce6a6c3-fc5b-41f1-858a-254e12b72fcd
+
+java:S1104"PMake dest a static final constant or non-public and provide accessors if needed.(ηκχ†ÿÿÿÿÿ8καδι‡2J$5704e29b-adcd-4d6c-9272-1c0f3f6d3029
+v
+java:S1128"3Remove this unused import 'java.io.BufferedReader'.(€ι²Ε8λªΰλ‡2J$7cd0ddf5-142c-4878-a073-28e03df3397b
+x
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªΊ»Ϊύÿÿÿÿ8λªΰλ‡2J$4606370e-0003-46c7-a64c-6f07b385a2f8
+x
+java:S1128"0Remove this unused import 'java.util.Hashtable'.(»ΟΚόÿÿÿÿ8λªΰλ‡2J$5e794de4-48b2-4c65-ad43-3fb613193799
+v
+java:S1128".Remove this unused import 'java.util.Scanner'.(ÒάΕΈϊÿÿÿÿ8λªΰλ‡2J$25063693-742f-43ad-bf5c-48be7e3970f6

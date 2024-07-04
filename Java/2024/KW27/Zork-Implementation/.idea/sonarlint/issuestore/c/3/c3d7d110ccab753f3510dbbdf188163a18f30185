@@ -1,11 +1,6 @@
 
-“
-java:S1104"PMake name a static final constant or non-public and provide accessors if needed.( şÍ¾8Ôï´¿‡2J$7f4f46fe-2c00-482c-bd11-49452e668295
-˜
-java:S1104"PMake desc a static final constant or non-public and provide accessors if needed.(õÄ‘Êşÿÿÿÿ8Ôï´¿‡2J$69337339-2fca-4ba4-a731-38582bbb6afc
-™
-java:S1104	"QMake exits a static final constant or non-public and provide accessors if needed.(‹Ò®êúÿÿÿÿ8Ôï´¿‡2J$e15dcada-d571-4eb6-acfe-beb15333042f
-¬
-java:S1319	"dThe type of "exits" should be an interface such as "Map" rather than the implementation "Hashtable".(‹Ò®êúÿÿÿÿ8Ôï´¿‡2J$06f12312-c52d-4faf-bf69-12ccabfdc986
 
-java:S1149	"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(‹Ò®êúÿÿÿÿ8Öï´¿‡2J$3a88f714-03c1-4980-b1da-0e0319302978
+java:S1149
+"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(íÀà¼úÿÿÿÿ8·Ø¥ä‡2J$0cefea67-5818-41f5-a3b4-01e65735f232
+v
+java:S1128".Remove this unused import 'java.util.Scanner'.(ÒÜÅ¸úÿÿÿÿ8É¼¦ä‡2J$38331e7c-7d53-4e5d-b9e7-907148fc7e2f

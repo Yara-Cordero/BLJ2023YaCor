@@ -1,3 +1,10 @@
 
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8‘Òä‡2
+
+java:S2095"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(ÏñæT8µÀÏä‡2J$1d560e74-3b24-4055-ab0e-7d28921cea14
 ™
-java:S1149	"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(Â¯ƒø8é¿‡2J$e284cbe9-eac5-463e-94ed-ab42eaaeda57
+java:S1149"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(Â¯ƒø8¶ÀÏä‡2J$bab2b490-8353-48a5-82ae-5e6a9e9f8291
+v
+java:S1128".Remove this unused import 'java.util.Scanner'.(ÒÜÅ¸úÿÿÿÿ8¹ÀÏä‡2J$fcdc74a5-502b-4281-a6b5-a2c9124b5768
+t
+java:S1068",Remove this unused "filepath" private field.(–îŸˆúÿÿÿÿ8¹ÀÏä‡2J$2d1975f2-ae25-4d73-ae2f-483206e6ed53
