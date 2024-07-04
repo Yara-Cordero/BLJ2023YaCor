@@ -1,9 +1,9 @@
 
-s
-java:S1149"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(Â¯ƒø8÷Íîë‡2
+™
+java:S1149"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(Â¯ƒø8÷Íîë‡2J$b3cc1451-8681-4c98-ac1e-442481e6d717
+š
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(à”Êïıÿÿÿÿ8øÍîë‡2J$43a40a80-04cf-4938-a63f-a762b3f9ef0c
+v
+java:S1128".Remove this unused import 'java.util.Scanner'.(ÒÜÅ¸úÿÿÿÿ8šÎîë‡2J$0f34276a-4d57-482f-992c-08c35c7fe5b1
 t
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(à”Êïıÿÿÿÿ8øÍîë‡2
-P
-java:S1128".Remove this unused import 'java.util.Scanner'.(ÒÜÅ¸úÿÿÿÿ8šÎîë‡2
-N
-java:S1068",Remove this unused "filepath" private field.(–îŸˆúÿÿÿÿ8šÎîë‡2
+java:S1068",Remove this unused "filepath" private field.(–îŸˆúÿÿÿÿ8šÎîë‡2J$cfd591d1-6711-4a79-9a0d-6e9e6cd9e991

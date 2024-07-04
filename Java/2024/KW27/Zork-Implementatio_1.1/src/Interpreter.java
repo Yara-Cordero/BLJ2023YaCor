@@ -6,9 +6,8 @@ import java.util.Scanner;
 
 class Interpreter {
     public static void main(String[] args) throws IOException, Dungeon.IllegalDungeonFormatException {
-
         try {
-            Dungeon dungeon = new Dungeon("src/simple.txt");
+            Dungeon dungeon = new Dungeon("src/files/farmer.zork");
             GameState.instance().initialize(dungeon);
             GameState.instance().setDungeon(dungeon);
 

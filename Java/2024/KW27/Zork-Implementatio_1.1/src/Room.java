@@ -23,12 +23,13 @@ public class Room {
         this.exits = new Hashtable<>();
         this.visited = false;
         try {
-            this.desc = reader.readLine().trim();
+            this.desc = reader.readLine();
             String line;
             while ((line = reader.readLine()) != null && !line.equals("---")) {
                 if (line.isEmpty()) {
                     continue;
                 }
+                this.desc += "\n" + line;
             }
         } catch (IOException e) {
             throw new IOException(e);

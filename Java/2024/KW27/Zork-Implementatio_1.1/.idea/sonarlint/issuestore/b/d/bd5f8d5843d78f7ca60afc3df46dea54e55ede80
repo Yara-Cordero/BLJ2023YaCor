@@ -1,7 +1,7 @@
 
-
-java:S1149"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(íÀà¼úÿÿÿÿ8¡õ”è‡2J$d909adb9-1fa5-43aa-a359-8eb2e607a5ef
-^
-java:S3626"Remove this redundant jump.(ÉŠ©ƒ8¢õ”è‡2J$2d438650-2f55-402a-a8a5-70c918433d7d
-v
-java:S1128".Remove this unused import 'java.util.Scanner'.(ÒÜÅ¸úÿÿÿÿ8²©–è‡2J$e1400863-36a8-457e-9ac2-5f5e66b1e76c
+>
+java:S1643 "Use a StringBuilder instead.(ô¢£õùÿÿÿÿ8ñ“Âì‡2
+x
+java:S1149"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(íÀà¼úÿÿÿÿ8ò“Âì‡2
+P
+java:S1128".Remove this unused import 'java.util.Scanner'.(ÒÜÅ¸úÿÿÿÿ8ü“Âì‡2

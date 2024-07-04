@@ -17,3 +17,7 @@ B
 src/Room.java,b\d\bd5f8d5843d78f7ca60afc3df46dea54e55ede80
 >
 src/simple.txt,e\6\e6caef75b6e1c058a83da33c6c1366b2af2adf71
+E
+src/files/simple.zork,c\7\c7d057a3c7d0859aa3745a05936c6e9d3d2ca23b
+E
+src/files/farmer.zork,e\3\e318091846e71e8a1350791d30a491fad84d6b51
