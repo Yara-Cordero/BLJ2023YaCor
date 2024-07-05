@@ -3,6 +3,9 @@ package Zork;
 public class InventoryCommand implements Command {
 
     public String execute() {
-        return "This should be the inventory\nlmao.";
+        if (GameState.instance().getInventory().isEmpty()){
+            return "You're empty-handed.";
+        }
+        return GameState.instance().getAllItemsInInventory();
     }
 }

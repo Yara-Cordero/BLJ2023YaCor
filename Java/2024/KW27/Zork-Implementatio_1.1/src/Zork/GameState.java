@@ -59,6 +59,13 @@ class GameState {
         return inventory;
     }
 
+    public String getAllItemsInInventory(){
+        StringBuilder allItems = new StringBuilder("You have\n");
+        for(Item item : inventory){
+            allItems.append(item.getPrimaryName() + "\n");
+        }
+        return allItems.toString();
+    }
     public void addToInventory(Item item){
         inventory.add(item);
     }

@@ -14,6 +14,6 @@ public class UnknownCommand implements Command {
         } else if (bogusCommand.toLowerCase().contains("fuck you")) {
             return "Fuck you too.";
         }
-        return "make me understand.\nplease.";
+        return "uh...\nI don't understand.";
     }
 }

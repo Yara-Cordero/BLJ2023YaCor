@@ -49,3 +49,5 @@ I
 src/files/simple_III.zork,e\0\e0b845921e1b15f1a134b53679b65e421d13ea6b
 G
 src/Zork/GameState.java,c\7\c78044cba76467610c8b05e633348d7d21f3970e
+I
+src/Zork/TakeCommand.java,7\0\70627dbd1e6403b8b25f1bb5ea0eb59a6468c01c

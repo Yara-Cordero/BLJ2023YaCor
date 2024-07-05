@@ -1,7 +1,6 @@
 
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ûÇÇÂ8Ð”’ò‡2J$44f20c60-2d4f-4639-9a1e-9286e9a6355f
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ûÇÇÂ8ÉÎ¤—ˆ2J$8e36695e-f49d-48ef-9958-59f7546e5b36
 –
-java:S3008	"SRename this field "Instance" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ùä–Â8Ð”’ò‡2J$6ed897f5-1cd1-4e6c-9b2b-371035e3e09a
+java:S3008	"SRename this field "Instance" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ùä–Â8ÊÎ¤—ˆ2J$8385657d-254b-4670-a8ff-4750986e1d76
 á
-java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(Ûãœêøÿÿÿÿ8Ñ”’ò‡2J$64c6f8f5-99ca-489f-b743-ec2164f7b2c0
-p	java:S108#")Either remove or fill this block of code.(Û…ÁÖüÿÿÿÿ8Ó”’ò‡2J$45a8b8a5-24e6-46c2-8d36-c7ec13d22dc3
+java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(Ûãœêøÿÿÿÿ8ÌÎ¤—ˆ2J$5d262017-31ae-4ae4-a000-d72ef99dedbe
