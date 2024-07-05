@@ -1,0 +1,12 @@
+
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ûÇÇÂ8­êˆ2J$5a56c05d-948c-493e-a5a7-3bf3954bddbb
+™
+java:S1149"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(Â¯ƒø8”­êˆ2J$0b6bb309-2c4f-479c-8848-600aff7d1da3
+
+java:S1149"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(Éè‰øÿÿÿÿ8”­êˆ2J$17c08349-ef5e-43ac-b5a1-d930b46e3b42
+š
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.(à”Êïıÿÿÿÿ8–­êˆ2J$f8e4f0ca-4fb7-4fc7-8499-1c7835bad0a2
+v
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(ÚãíÛúÿÿÿÿ8¤ïÂ‘ˆ2
+t
+java:S1068",Remove this unused "filepath" private field.(–îŸˆúÿÿÿÿ8¡­êˆ2J$977e9e58-731f-4319-9048-7161609711ef

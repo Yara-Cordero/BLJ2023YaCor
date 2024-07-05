@@ -1,15 +1,15 @@
-
+package Zork;
 
 
 import java.io.IOException;
 import java.util.Scanner;
 
 class Interpreter {
-    public static void main(String[] args) throws IOException, Dungeon.IllegalDungeonFormatException {
+    public static void main(String[] args) throws IOException, Dungeon.IllegalDungeonFormatException{
+
         try {
-            Dungeon dungeon = new Dungeon("src/files/farmer.zork");
+            Dungeon dungeon = new Dungeon("src/files/simple_III.zork");
             GameState.instance().initialize(dungeon);
-            GameState.instance().setDungeon(dungeon);
 
             Room currentRoom = GameState.instance().getAdventurersCurrentRoom();
             System.out.println(currentRoom.describe());
@@ -22,9 +22,6 @@ class Interpreter {
                 Command command = CommandFactory.instance().parse(input);
                 String result = command.execute();
                 System.out.println(result);
-
-                currentRoom = GameState.instance().getAdventurersCurrentRoom();
-                System.out.println(currentRoom.describe());
             }
         }catch (IOException e){
             throw new IOException(e.getMessage());
@@ -51,6 +48,7 @@ class Interpreter {
         dungeon.addRoom(entry);
         dungeon.addRoom(livingRoom);
         dungeon.addRoom(kitchen);
+
 
         return dungeon;
     }

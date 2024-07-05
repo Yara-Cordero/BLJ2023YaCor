@@ -1,13 +1,33 @@
 Yara's House
 ===
+Items:
+TaxidermyDeerHead
+6
+---
+wobblyCatFigure,figurine
+2
+---
+catPlushie,plushie
+1
+touch: fluffy
+bite: mhmm.
+---
+apple
+2
+eat: tasty apple
+---
+===
 Rooms:
 Entry
+Contents: TaxidermyDeerHead
 This is a narrow entry way to a seemingly large house.
 ---
 Living Room
+Contents: wobblyCatFigure,catPlushie
 The living room is decorated with all kinds of cats. May it be small or large, all cat memorabilia seems to have its place here. There is a wide arched doorway east to you.
 ---
 Kitchen
+Contents: apple
 A small but cozy kitchen, with big amounts of machines, such as an ice cream, mixer and washing machine.
 ---
 ===

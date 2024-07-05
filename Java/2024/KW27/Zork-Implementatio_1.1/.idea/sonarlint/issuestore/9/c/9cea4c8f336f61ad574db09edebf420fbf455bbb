@@ -1,0 +1,8 @@
+
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ϋΗΗΒ8¦γ€ν‡2
+’
+java:S1104"OMake dir a static final constant or non-public and provide accessors if needed.(Φφ«χ8καδι‡2J$e86fc52e-6df9-4a39-991e-ac5baeb6e463
+’
+java:S1104"OMake src a static final constant or non-public and provide accessors if needed.(τ‚―μ8καδι‡2J$0a1052e1-db7e-437b-abd0-a918331d1667
+
+java:S1104	"PMake dest a static final constant or non-public and provide accessors if needed.(ηκχ†ÿÿÿÿÿ8καδι‡2J$c9ff4fa7-b7d7-4c1f-ae5e-4cffb226b4dd

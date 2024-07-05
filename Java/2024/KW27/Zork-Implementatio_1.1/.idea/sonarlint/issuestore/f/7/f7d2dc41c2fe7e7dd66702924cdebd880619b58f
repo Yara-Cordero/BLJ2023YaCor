@@ -1,0 +1,7 @@
+
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ûÇÇÂ8Œ½¹ˆ2J$4e5dbdd1-47b3-44cf-9108-e8d09f0605cb
+t
+java:S1144!"1Remove this unused private "buildDungeon" method.(Ï”³8½¹ˆ2J$be9d421f-d422-4ad5-88a9-338a7e3318d3
+m	java:S106"+Replace this use of System.out by a logger.(¼ÊœÚ8’½¹ˆ2J$7bd37b36-713a-4cc3-ba28-7a2b75958292
+r	java:S106"+Replace this use of System.out by a logger.(›Äæ÷üÿÿÿÿ8“½¹ˆ2J$5d093f0a-2448-4197-ad1a-1e3c767258cb
+r	java:S106"+Replace this use of System.out by a logger.(®ıáëûÿÿÿÿ8”½¹ˆ2J$ebceef60-bd0d-41de-ba50-abad022c265f

@@ -1,0 +1,6 @@
+
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ûÇÇÂ8—¨à‘ˆ2J$be62c9c8-70d7-49f8-aa62-a5a5ace0c827
+ž
+java:S1149"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(íÀà¼úÿÿÿÿ8™¨à‘ˆ2J$b60417d1-56d5-47a9-abe9-4f083548665b
+s
+java:S1144]"0Remove this unused private "getContents" method.(“Õ­Ž8™¨à‘ˆ2J$9330114b-3ab1-40a6-a7c2-27ceaa86631e
