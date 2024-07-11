@@ -11,12 +11,14 @@ public class Room {
     private String desc;
     private Hashtable<String, Exit> exits;
     private HashSet<Item> contents;
-    private  String[] initialItemNames;
+    private Hashtable<String, String> roomItemDescriptions;
+    private String[] initialItemNames;
     private boolean visited;
 
     public Room(String name) {
         this.name = name;
         this.exits = new Hashtable<>();
+        this.roomItemDescriptions = new Hashtable<>();
         this.visited = false;
     }
 
@@ -24,6 +26,7 @@ public class Room {
         this.name = name;
         this.exits = new Hashtable<>();
         this.contents = new HashSet<>();
+        this.roomItemDescriptions = new Hashtable<>();
         this.visited = false;
         StringBuilder descBuilder = new StringBuilder();
         try {
@@ -44,9 +47,15 @@ public class Room {
     public void initializeContents(Dungeon dungeon) {
         if (initialItemNames != null) {
             for (String itemName : initialItemNames) {
-                Item item = dungeon.getItem(itemName.trim());
+                String[] parts = itemName.trim().split(":", 2);
+                String itemPrimaryName = parts[0].trim();
+                Item item = dungeon.getItem(itemPrimaryName);
                 if (item != null) {
                     addItem(item);
+                    if (parts.length > 1) {
+                        String itemDescription = parts[1].trim();
+                        roomItemDescriptions.put(itemPrimaryName, itemDescription);
+                    }
                 }
             }
         }
@@ -58,11 +67,14 @@ public class Room {
 
     public String getDesc() {
         StringBuilder description = new StringBuilder(name + "\n" + desc);
-        for (Item items : contents){
-            description.append("\nThere is a ").append(items.getPrimaryName());
+        for (Item item : contents) {
+            if (roomItemDescriptions.containsKey(item.getPrimaryName())) {
+                String itemDescription = roomItemDescriptions.get(item.getPrimaryName());
+                description.append("\n").append(itemDescription);
+            }
         }
         description.append("\nExits:");
-        for(String dir : exits.keySet()) {
+        for (String dir : exits.keySet()) {
             description.append(" ").append(dir);
         }
         return description.toString();
@@ -76,8 +88,15 @@ public class Room {
         if (!visited){
             visited = true;
             GameState.instance().visit(this);
-            StringBuilder description = new StringBuilder(name + "\n" + desc +  "\nExits:");
-            for(String dir : exits.keySet()) {
+            StringBuilder description = new StringBuilder(name + "\n" + desc);
+            for (Item item : contents) {
+                if (roomItemDescriptions.containsKey(item.getPrimaryName())) {
+                    String itemDescription = roomItemDescriptions.get(item.getPrimaryName());
+                    description.append("\n").append(itemDescription);
+                }
+            }
+            description.append("\nExits:");
+            for (String dir : exits.keySet()) {
                 description.append(" ").append(dir);
             }
             return description.toString();

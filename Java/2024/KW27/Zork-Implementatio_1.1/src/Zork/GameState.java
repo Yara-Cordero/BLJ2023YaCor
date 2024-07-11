@@ -60,9 +60,9 @@ class GameState {
     }
 
     public String getAllItemsInInventory(){
-        StringBuilder allItems = new StringBuilder("You have\n");
+        StringBuilder allItems = new StringBuilder("You have");
         for(Item item : inventory){
-            allItems.append(item.getPrimaryName() + "\n");
+            allItems.append("\n" + item.getPrimaryName());
         }
         return allItems.toString();
     }

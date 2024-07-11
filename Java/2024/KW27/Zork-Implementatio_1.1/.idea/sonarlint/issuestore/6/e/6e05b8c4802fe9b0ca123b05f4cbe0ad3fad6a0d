@@ -1,4 +1,6 @@
 
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ûÇÇÂ8ÔÅ£‡Š2J$503816e0-26df-4b89-a93f-8c96ffd5058e
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ûÇÇÂ8ÒşŠ2J$1d0e5de4-c777-4efe-a651-6c05c157c986
 
-java:S1149"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(íÀà¼úÿÿÿÿ8×Å£‡Š2J$72df684f-6b7e-405e-aa12-d9815a4a45a1
+java:S1149"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(íÀà¼úÿÿÿÿ8‘ÒşŠ2J$ec065b93-2fe8-4aad-9019-9bedcb55372c
+
+java:S1149"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(Õ€ÄÉÿÿÿÿÿ8‘ÒşŠ2J$fde7a68d-fc8e-4b8b-b552-986ed0303d13

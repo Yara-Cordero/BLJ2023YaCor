@@ -1,12 +1,12 @@
 
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ûÇÇÂ8¥Šª‡Š2J$cb3b71a8-7bde-45b9-a37b-72de978ac34b
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ûÇÇÂ8¥Šª‡Š2J$10821d92-1066-4ae2-8938-7fcbbbf14919
 ™
-java:S1149"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(Â¯ƒø8©Šª‡Š2J$ff2cdac9-4d85-4186-8c8a-bb34963ddd56
+java:S1149"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(Â¯ƒø8©Šª‡Š2J$df593095-ca11-4abe-babc-9ca2a38a2492
 
-java:S1149"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(Éè‰øÿÿÿÿ8©Šª‡Š2J$76ce5bac-9da3-481d-a89c-4cb8f5b07aa2
+java:S1149"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(Éè‰øÿÿÿÿ8©Šª‡Š2J$06c4ca31-cead-4fb7-ae4f-8e69ee520ed5
 š
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 31 to the 15 allowed.(à”Êïıÿÿÿÿ8ªŠª‡Š2J$f39ec281-c49a-4ce6-8c9e-964726d1e649
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 31 to the 15 allowed.(à”Êïıÿÿÿÿ8ªŠª‡Š2J$e75f03a1-4cfc-42f2-8435-5b6653cac8e0
 œ
-java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(ÚãíÛúÿÿÿÿ8µï¨ˆŠ2J$2b3dbae4-c803-45ea-b80f-187d23561601
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(ÚãíÛúÿÿÿÿ8µï¨ˆŠ2J$0996af67-04ed-4230-8674-aa3af3c66585
 t
-java:S1068",Remove this unused "filepath" private field.(–îŸˆúÿÿÿÿ8ĞŠª‡Š2J$dd0bb45a-7f14-4ae9-ba72-ed4c3ecb086c
+java:S1068",Remove this unused "filepath" private field.(–îŸˆúÿÿÿÿ8ĞŠª‡Š2J$59b198e6-962a-426c-8a31-49b6bb5c8550

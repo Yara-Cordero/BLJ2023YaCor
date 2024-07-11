@@ -8,12 +8,14 @@ import java.util.Scanner;
 public class Item {
 
     private String primaryName;
+    private String description;
     private int weight;
     private Hashtable <String, String> messages;
     private HashSet<String> aliases;
 
-    public Item(String primaryName, int weight) {
+    public Item(String primaryName,String description, int weight) {
         this.primaryName = primaryName;
+        this.description = description;
         this.weight = weight;
         this.messages = new Hashtable<>();
         this.aliases = new HashSet<>();
@@ -27,6 +29,7 @@ public class Item {
             this.aliases.add(splitName[i].trim());
         }
 
+        this.description = scan.nextLine().trim();
         this.weight = Integer.parseInt(scan.nextLine().trim());
         this.messages = new Hashtable<>();
 
