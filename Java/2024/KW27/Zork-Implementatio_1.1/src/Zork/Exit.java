@@ -15,7 +15,6 @@ public class Exit {
     }
 
 
-
     public String getDir() {
         return dir;
     }

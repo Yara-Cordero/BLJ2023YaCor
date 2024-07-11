@@ -83,8 +83,8 @@ class GameState {
     }
 
     public void removeItemFromRoom(Item item, Room room){
-        HashSet<Item> items = roomContents.get(room);
-        if (item != null){
+        HashSet<Item> items = room.getContents();
+        if (items.contains(item)){
             items.remove(item);
         }
     }
@@ -99,16 +99,12 @@ class GameState {
     }
 
     public Item getItemInVicinityNamed(String name) throws Item.NoItemException {
-        try {
-            return getItemInVicinityNamed(name);
-        }catch (Item.NoItemException e){
-            Room currentRoom = getAdventurersCurrentRoom();
-            Item item = currentRoom.getItemNamed(name);
-            if (item == null){
-                throw new Item.NoItemException(name + " not found in your vicinity.");
-            }
-            return item;
+        Room currentRoom = getAdventurersCurrentRoom();
+        Item item = currentRoom.getItemNamed(name);
+        if (item == null) {
+            throw new Item.NoItemException(name + " not found in your vicinity.");
         }
+        return item;
     }
 
     public class IllegalSaveFormatException extends Exception {

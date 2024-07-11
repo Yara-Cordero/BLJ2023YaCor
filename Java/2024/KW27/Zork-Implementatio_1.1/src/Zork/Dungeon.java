@@ -47,6 +47,7 @@ public class Dungeon {
                     continue;
                 }
 
+
                 StringBuilder itemData = new StringBuilder(line + "\n" + reader.readLine() + "\n" + reader.readLine() + "\n");
                 while (!(line = reader.readLine()).equals("---")){
                     itemData.append(line + "\n");
@@ -86,6 +87,9 @@ public class Dungeon {
                     exits.add(new ExitInfo(srcName, dir, destName));
                 }
             }
+            for (Room room : rooms.values()) {
+                room.initializeContents(this);
+            }
         } catch (IOException e) {
             throw new IOException(e);
         }
@@ -97,7 +101,7 @@ public class Dungeon {
             if (src != null && dest != null) {
                 src.addExit(new Exit(exitInfo.dir, src, dest));
             } else {
-                throw new IllegalDungeonFormatException("Zork.Exit references non-existent room: " + exitInfo.srcName + " or " + exitInfo.destName);
+                throw new IllegalDungeonFormatException("Exit references non-existent room: " + exitInfo.srcName + " or " + exitInfo.destName);
             }
         }
     }

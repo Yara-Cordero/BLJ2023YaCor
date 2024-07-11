@@ -11,6 +11,7 @@ public class Room {
     private String desc;
     private Hashtable<String, Exit> exits;
     private HashSet<Item> contents;
+    private  String[] initialItemNames;
     private boolean visited;
 
     public Room(String name) {
@@ -26,17 +27,10 @@ public class Room {
         this.visited = false;
         StringBuilder descBuilder = new StringBuilder();
         try {
-            this.desc = reader.readLine().trim();
             String line;
             while ((line = reader.readLine()) != null && !line.equals("---")) {
                 if (line.startsWith("Contents:")){
-                    String[] items = line.substring(9).split(",");
-                    for (String itemName : items){
-                        Item item = GameState.instance().getDungeon().getItem(itemName.trim());
-                        if (item != null){
-                            addItem(item);
-                        }
-                    }
+                    initialItemNames = line.substring(9).split(",");
                 } else {
                     descBuilder.append(line).append("\n");
                 }
@@ -47,6 +41,17 @@ public class Room {
         }
     }
 
+    public void initializeContents(Dungeon dungeon) {
+        if (initialItemNames != null) {
+            for (String itemName : initialItemNames) {
+                Item item = dungeon.getItem(itemName.trim());
+                if (item != null) {
+                    addItem(item);
+                }
+            }
+        }
+    }
+
     public String getName() {
         return name;
     }
@@ -54,7 +59,7 @@ public class Room {
     public String getDesc() {
         StringBuilder description = new StringBuilder(name + "\n" + desc);
         for (Item items : contents){
-            description.append("There is a").append(items.getPrimaryName()).append("\n");
+            description.append("\nThere is a ").append(items.getPrimaryName());
         }
         description.append("\nExits:");
         for(String dir : exits.keySet()) {
@@ -90,7 +95,7 @@ public class Room {
         return null;
     }
 
-    private HashSet<Item> getContents(){
+    HashSet<Item> getContents(){
         return contents;
     }
 

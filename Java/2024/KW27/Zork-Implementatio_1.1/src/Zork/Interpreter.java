@@ -12,7 +12,8 @@ class Interpreter {
             GameState.instance().initialize(dungeon);
 
             Room currentRoom = GameState.instance().getAdventurersCurrentRoom();
-            System.out.println(currentRoom.describe());
+            System.out.println(currentRoom.getDesc());
+
 
             Scanner scan = new Scanner(System.in);
 

@@ -1,7 +1,0 @@
-
-™
-java:S1149"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(Â¯ƒø8„Ùàì‡2J$8825f739-82b2-4fd3-a758-8cb6563a6725
-š
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(à”Êïıÿÿÿÿ8…Ùàì‡2J$c5ff60ca-c155-4b13-93ce-18dde4cdacc7
-t
-java:S1068",Remove this unused "filepath" private field.(–îŸˆúÿÿÿÿ8‘Ùàì‡2J$e2f3780d-e8cc-4be8-abb7-fd24321c4731

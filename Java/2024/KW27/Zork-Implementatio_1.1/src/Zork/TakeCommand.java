@@ -15,13 +15,14 @@ public class TakeCommand implements Command{
 
         try {
             Item item = GameState.instance().getItemInVicinityNamed(itemName);
-            if (item != null){
+            if (item == null){
                 return "There isn't a " + itemName + " here";
             }
+            GameState.instance().addToInventory(item);
+            GameState.instance().removeItemFromRoom(item, GameState.instance().getAdventurersCurrentRoom());
+            return  "Your are now in possesion of a " + itemName;
         } catch (Item.NoItemException e) {
-            throw new RuntimeException(e);
+            return "There is no such thing in this room.";
         }
-
-        return "lol";
     }
 }

@@ -1,7 +1,0 @@
-
-t
-java:S1144*"1Remove this unused private "buildDungeon" method.(Ï”³8‰ûæì‡2J$a1dc7445-b0df-4861-8a69-5818ed20128c
-m	java:S106"+Replace this use of System.out by a logger.(¼ÊœÚ8Œûæì‡2J$200d77d4-46fc-4300-9aef-140791c51d38
-r	java:S106"+Replace this use of System.out by a logger.(›Äæ÷üÿÿÿÿ8ûæì‡2J$b866940a-ed6d-44cb-99a9-4101f14daf8b
-r	java:S106"+Replace this use of System.out by a logger.(®ıáëûÿÿÿÿ8ûæì‡2J$561dc26b-32c0-4b26-bb65-37aaa123f850
-m	java:S106!"+Replace this use of System.out by a logger.(¼ÊœÚ8ûæì‡2J$8d666645-12c4-4194-afc5-d19b1974afe8

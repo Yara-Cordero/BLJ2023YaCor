@@ -18,7 +18,7 @@ class CommandFactory {
     }
 
     public Command parse(String commandString){
-        commandString = commandString.toLowerCase().trim();
+        commandString = commandString.trim();
 
         if (commandString.equals("move")){
             return new MovementCommand(commandString);
