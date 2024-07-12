@@ -31,3 +31,7 @@ G
 src/Zork/GameState.java,c\7\c78044cba76467610c8b05e633348d7d21f3970e
 I
 src/Zork/TakeCommand.java,7\0\70627dbd1e6403b8b25f1bb5ea0eb59a6468c01c
+Q
+!src/Zork/ItemSpecificCommanf.java,b\1\b1ed3d3d6d66f9706a57c8c25dc121a551069b76
+Q
+!src/Zork/ItemSpecificCommand.java,2\5\25994cdf193e30c3b50acd3ae7d67a91ccc72e8c

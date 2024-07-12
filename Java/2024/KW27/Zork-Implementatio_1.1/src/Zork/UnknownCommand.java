@@ -13,6 +13,8 @@ public class UnknownCommand implements Command {
             return "I beg your pardon?";
         } else if (bogusCommand.toLowerCase().contains("fuck you")) {
             return "Fuck you too.";
+        } else if (bogusCommand.toLowerCase().contains("help")){
+            return "help yourself";
         }
         return "uh...\nI don't understand.";
     }

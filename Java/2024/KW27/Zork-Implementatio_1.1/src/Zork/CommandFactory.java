@@ -36,6 +36,11 @@ class CommandFactory {
             return new LookCommand();
         } else if (ArrayUtils.contains(splitCommand, "take")) {
             return new TakeCommand(splitCommand[1]);
+        } else if (splitCommand.length > 1) {
+
+            String verb = splitCommand[0];
+            String itemName = splitCommand[1];
+            return new ItemSpecificCommand(verb, itemName);
         }
         return new UnknownCommand(commandString);
     }
