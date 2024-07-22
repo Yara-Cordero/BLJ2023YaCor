@@ -74,7 +74,8 @@ const [raceData, setRaceData] = useState<RaceOrSprintType>();
   }, [])
 
   return (
-    <div className='spanBox'>
+    <div className='redBox'>
+      <div className='spanBox'>
       {raceData && (
         <div>
           <Grid container rowSpacing={0} sx={{ margin: '0 auto' }}>
@@ -111,6 +112,7 @@ const [raceData, setRaceData] = useState<RaceOrSprintType>();
           </Grid>
         </div>
       )}
+    </div>
     </div>
   );
 }

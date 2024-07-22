@@ -35,7 +35,8 @@ function DriverStandingsPage() {
       <Typography sx={{ fontFamily: 'Bebas Neue', fontSize: '120px', marginBottom: '20px', marginTop: '20px' }}>
         Driver Standings
       </Typography>
-      <Grid container spacing={2} sx={{width: '90%', margin: '0 auto' }}>
+      <div className="redBox" >
+        <Grid container spacing={2} sx={{width: '60%', margin: '0 auto' }}>
         {driverStandingData.map((driverStanding, index) => (
           <DriverStandingInfo
             key={index}
@@ -46,6 +47,8 @@ function DriverStandingsPage() {
           />
         ))}
       </Grid>
+      </div>
+      
     </>
   );
 }

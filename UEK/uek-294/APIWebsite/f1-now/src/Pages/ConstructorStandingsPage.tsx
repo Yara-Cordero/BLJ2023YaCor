@@ -29,11 +29,13 @@ function ConstructorStandingsPage() {
       <Typography sx={{ fontFamily: 'Bebas Neue', fontSize: '120px', marginBottom: '20px', marginTop: '20px' }}>
         Constructor Standings
       </Typography>
-      <Grid container spacing={2} sx={{width: '90%', margin: '0 auto' }}>
-        {constructorStandingData.map((constructorStanding, index) => (
-          <ConstructorStandingInfo key={index} position={constructorStanding.position} team={constructorStanding.Constructor.name} points={constructorStanding.points} />
-        ))}
-      </Grid>
+      <div className="redBox">
+        <Grid container spacing={2} sx={{width: '60%', margin: '0 auto' }}>
+          {constructorStandingData.map((constructorStanding, index) => (
+            <ConstructorStandingInfo key={index} position={constructorStanding.position} team={constructorStanding.Constructor.name} points={constructorStanding.points} />
+          ))}
+        </Grid>
+      </div>
     </>
   );
 }

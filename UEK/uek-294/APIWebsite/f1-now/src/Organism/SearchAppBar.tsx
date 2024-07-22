@@ -21,12 +21,9 @@ const Search = styled('div')(({ theme }) => ({
   '&:hover': {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
-  marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(1),
-    width: 'auto',
-  },
+  marginLeft: theme.spacing(1),
+  width: 'auto',
+  color: 'black',
 }));
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
@@ -44,17 +41,43 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   width: '100%',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
     [theme.breakpoints.up('sm')]: {
-      width: '12ch',
+      width: '20ch', // Increase the initial width
       '&:focus': {
-        width: '20ch',
+        width: '30ch', // Increase the width when focused
       },
     },
   },
 }));
+
+const StyledAppBar = styled(AppBar)({
+  backgroundColor: 'white',
+  color: '#e10600',
+  height: '5em', // Set the desired height
+});
+
+
+const StyledTypography = styled(Typography)({
+  fontFamily: 'Bebas Neue',
+  fontSize: '1.5em',
+  marginRight: '1em',
+  cursor: 'pointer',
+});
+
+const TitleTypography = styled(Typography)({
+  fontFamily: 'Bebas Neue',
+  fontSize: '2em',
+  marginRight: '1em',
+  cursor: 'pointer',
+});
+
+const MenuTypography = styled(MenuItem)({
+  fontFamily: 'Bebas Neue',
+  color: '#e10600',
+  fontSize: '1.5em',
+});
 
 export default function SearchAppBar() {
   const navigate = useNavigate();
@@ -73,61 +96,39 @@ export default function SearchAppBar() {
     handleMenuClose();
   };
 
-   
-
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" sx={{ backgroundColor: 'white', color: '#e10600' }}>
-        <Toolbar>
-          <Typography
-            sx={{ fontFamily: 'Bebas Neue', fontSize: '40px', marginRight: '20px', cursor: 'pointer' }}
-            onClick={() => navigate("/")}
-          >
+      <StyledAppBar position="fixed">
+        <Toolbar sx={{ height: '5em'}}>
+          <TitleTypography onClick={() => navigate("/")}>
             F1 NOW
-          </Typography>
-          <Typography
-            sx={{ fontFamily: 'Bebas Neue', fontSize: '20px', marginRight: '20px', cursor: 'pointer' }}
-            onClick={handleMenuOpen}
-          >
+          </TitleTypography>
+          <StyledTypography onClick={handleMenuOpen}>
             Standings
-          </Typography>
+          </StyledTypography>
           <Menu
             anchorEl={anchorEl}
             open={Boolean(anchorEl)}
             onClose={handleMenuClose}
           >
-            <MenuItem
-              onClick={() => handleMenuItemClick("/standings/driver")}
-              sx={{ fontFamily: 'Bebas Neue', color: '#e10600' }}
-            >
+            <MenuTypography onClick={() => handleMenuItemClick("/standings/driver")}>
               Drivers
-            </MenuItem>
-            <MenuItem
-              onClick={() => handleMenuItemClick("/standings/constructor")}
-              sx={{ fontFamily: 'Bebas Neue', color: '#e10600' }}
-            >
+            </MenuTypography>
+            <MenuTypography onClick={() => handleMenuItemClick("/standings/constructor")}>
               Constructors
-            </MenuItem>
+            </MenuTypography>
           </Menu>
-          <Typography
-          sx={{ fontFamily: 'Bebas Neue', fontSize: '20px', marginRight: '20px', cursor: 'pointer' }}
-          onClick={() => navigate("/race")}
-          >
+          <StyledTypography onClick={() => navigate("/race")}>
             Races
-          </Typography>
-          <Typography
-          sx={{ fontFamily: 'Bebas Neue', fontSize: '20px', marginRight: '20px', cursor: 'pointer' }}
-          onClick={() => navigate("/driver")}
-          >
+          </StyledTypography>
+          <StyledTypography onClick={() => navigate("/driver")}>
             Drivers
-          </Typography>
-          <Typography
-          sx={{ fontFamily: 'Bebas Neue', fontSize: '20px', marginRight: '50px', cursor: 'pointer' }}
-          onClick={() => navigate("/constructor")}
-          >
+          </StyledTypography>
+          <StyledTypography onClick={() => navigate("/constructor")}>
             Teams
-          </Typography>
-          <Search sx={{ color: 'black'}}>
+          </StyledTypography>
+          <Box sx={{ flexGrow: 1 }} />
+          <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
@@ -137,7 +138,7 @@ export default function SearchAppBar() {
             />
           </Search>
         </Toolbar>
-      </AppBar>
+      </StyledAppBar>
     </Box>
   );
 }
