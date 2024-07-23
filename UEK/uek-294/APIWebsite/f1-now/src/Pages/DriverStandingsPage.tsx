@@ -48,7 +48,6 @@ function DriverStandingsPage() {
         ))}
       </Grid>
       </div>
-      
     </>
   );
 }
