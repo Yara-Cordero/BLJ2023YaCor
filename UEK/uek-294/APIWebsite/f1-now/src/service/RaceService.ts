@@ -33,7 +33,8 @@ const RaceService = (api: AxiosInstance = defaultAxiosInstance) => ({
     getAllRace: async () => {
         const response = await api.get(`/f1/current.json`);
         console.log(response)
-        return response.data;
+        const race = response.data.MRData.RaceTable.Races;
+        return race;
     }
 });
 
