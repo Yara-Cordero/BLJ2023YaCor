@@ -25,7 +25,7 @@ function TeamInfo({ name, nationality }: ConstructorInfo) {
             sx={{
               fontFamily: "Bebas Neue",
               fontSize: "30px",
-              textAlign: "right",
+              textAlign: "left",
             }}
           >
             Nationality:<br></br>
