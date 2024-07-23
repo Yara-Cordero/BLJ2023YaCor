@@ -14,4 +14,4 @@
    npm start
    ```
 
-Der angezeigte Link im Browser öffnen
+Open the Link in Browser
