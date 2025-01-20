@@ -54,6 +54,9 @@ public class Item {
         return messages.get(verb);
     }
 
+    public boolean isKey(){
+        return false;
+    }
 
     public String toString(){
         return primaryName;

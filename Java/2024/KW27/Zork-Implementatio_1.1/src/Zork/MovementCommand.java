@@ -13,16 +13,19 @@ public class MovementCommand implements Command {
         }
 
         Room currentRoom = GameState.instance().getAdventurersCurrentRoom();
-        Room nextRoom = currentRoom.leaveBy(dir);
-
-        if (dir.equals("north") || dir.equals("east") || dir.equals("south") || dir.equals("west")){
-            if (nextRoom != null){
-                GameState.instance().setAdventurersCurrentRoom(nextRoom);
-                return nextRoom.describe();
-            }else {
-                return "You can't move " + dir + " from here";
+        try {
+            Room nextRoom = currentRoom.leaveBy(dir);
+            if (dir.equals("north") || dir.equals("east") || dir.equals("south") || dir.equals("west")){
+                if (nextRoom != null){
+                    GameState.instance().setAdventurersCurrentRoom(nextRoom);
+                    return nextRoom.describe();
+                }else {
+                    return "You can't move " + dir + " from here";
+                }
             }
+            return "huh.";
+        } catch (Room.ExitLockedException e) {
+            return "The exit is locked.\nYou need a key to open it.";
         }
-        return "huh.";
     }
 }

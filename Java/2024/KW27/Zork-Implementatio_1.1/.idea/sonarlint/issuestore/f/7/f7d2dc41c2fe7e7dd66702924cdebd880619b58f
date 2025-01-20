@@ -1,7 +1,10 @@
 
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ûÇÇÂ8Á´ê–ˆ2J$b65f9338-3679-47fa-80b9-a281246f9542
-t
-java:S1144""1Remove this unused private "buildDungeon" method.(Ï”Ž³8Ã´ê–ˆ2J$ce7924c5-efda-4d2b-9215-fe0fa98870f1
-r	java:S106"+Replace this use of System.out by a logger.(Ûæ¢åøÿÿÿÿ8Å´ê–ˆ2J$add5cb68-4dc3-451f-8be1-7b6d237516bf
-r	java:S106"+Replace this use of System.out by a logger.(›Äæ÷üÿÿÿÿ8Ç´ê–ˆ2J$733f1f23-58ba-47a9-9aa1-1aad06600c09
-r	java:S106"+Replace this use of System.out by a logger.(®ýáëûÿÿÿÿ8Ç´ê–ˆ2J$17b3474b-df65-4060-b490-6edac97aa97a
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ûÇÇÂ8Ž¥„³’2
+N
+java:S1144<"1Remove this unused private "buildDungeon" method.(Ï”Ž³8”¥„³’2
+L	java:S106"+Replace this use of System.out by a logger.(Ûæ¢åøÿÿÿÿ8›¥„³’2
+L	java:S106"+Replace this use of System.out by a logger.(›Äæ÷üÿÿÿÿ8¡¥„³’2
+L	java:S106"+Replace this use of System.out by a logger.(®ýáëûÿÿÿÿ8¢¥„³’2
+G	java:S106$"+Replace this use of System.out by a logger.(èäÿà8¤¥„³’2
+^
+java:S1075+"ARefactor your code to get this URI from a customizable parameter.(ÊÊºÕ8§¥„³’2

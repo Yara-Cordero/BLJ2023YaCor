@@ -107,6 +107,11 @@ class GameState {
         return item;
     }
 
+    public void unlockExit(String dir, Key key) throws Room.ExitLockedException{
+        Room currentRoom = getAdventurersCurrentRoom();
+        currentRoom.unlockExit(dir, key);
+    }
+
     public class IllegalSaveFormatException extends Exception {
         public IllegalSaveFormatException(String errorMessage) {
             super(errorMessage);

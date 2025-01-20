@@ -3,6 +3,7 @@ package Zork;
 import Zork.Room;
 
 import java.io.*;
+import java.rmi.MarshalException;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
@@ -42,19 +43,28 @@ public class Dungeon {
                 throw new IllegalDungeonFormatException("Missing 'Items:' after '==='.");
             }
 
-            while ((line = reader.readLine()) != null && !line.equals("===")){
-                if (line.trim().isEmpty()){
+            while ((line = reader.readLine()) != null && !line.equals("===")) {
+                if (line.trim().isEmpty()) {
                     continue;
                 }
 
-
+                String itemType = line.trim();
+                if (itemType.equals("Key")){
+                    line = reader.readLine().trim();
+                }
                 StringBuilder itemData = new StringBuilder(line + "\n" + reader.readLine() + "\n" + reader.readLine() + "\n");
-                while (!(line = reader.readLine()).equals("---")){
+                while (!(line = reader.readLine()).equals("---")) {
                     itemData.append(line + "\n");
                 }
                 itemData.append(line + "\n");
                 Scanner scan = new Scanner(itemData.toString());
-                Item item = new Item(scan);
+
+                Item item;
+                if (itemType.equals("Key")){
+                    item = new Key(scan);
+                }else {
+                    item = new Item(scan);
+                }
                 addItem(item);
             }
 
@@ -72,7 +82,6 @@ public class Dungeon {
                 if (entry == null) {
                     entry = room;
                 }
-
             }
 
             line = reader.readLine();
@@ -84,27 +93,40 @@ public class Dungeon {
                     String srcName = line.trim();
                     String dir = reader.readLine().trim();
                     String destName = reader.readLine().trim();
-                    exits.add(new ExitInfo(srcName, dir, destName));
+                    line = reader.readLine().trim();
+                    String keyName = line.equals("---") ? "null" : line;
+                    exits.add(new ExitInfo(srcName, dir, destName, keyName));
                 }
             }
+
             for (Room room : rooms.values()) {
                 room.initializeContents(this);
             }
+
         } catch (IOException e) {
             throw new IOException(e);
         }
 
-        // Resolve exits
         for (ExitInfo exitInfo : exits) {
             Room src = getRoom(exitInfo.srcName);
             Room dest = getRoom(exitInfo.destName);
             if (src != null && dest != null) {
-                src.addExit(new Exit(exitInfo.dir, src, dest));
+                if (exitInfo.keyName.isEmpty() || exitInfo.keyName.equals("null")) {
+                    src.addExit(new Exit(exitInfo.dir, src, dest));
+                } else {
+                    Item item = getItem(exitInfo.keyName);
+                    if (item instanceof Key) {
+                        src.addExit(new Exit(exitInfo.dir, src, dest, (Key) item));
+                    } else {
+                        throw new IllegalDungeonFormatException("The item " + exitInfo.keyName + " is not a key.");
+                    }
+                }
             } else {
                 throw new IllegalDungeonFormatException("Exit references non-existent room: " + exitInfo.srcName + " or " + exitInfo.destName);
             }
         }
     }
+
 
     public Room getEntry() {
         return entry;
@@ -140,11 +162,13 @@ public class Dungeon {
         String srcName;
         String dir;
         String destName;
+        String keyName;
 
-        ExitInfo(String srcName, String dir, String destName) {
+        ExitInfo(String srcName, String dir, String destName, String keyName) {
             this.srcName = srcName;
             this.dir = dir;
             this.destName = destName;
+            this.keyName = keyName;
         }
     }
 }

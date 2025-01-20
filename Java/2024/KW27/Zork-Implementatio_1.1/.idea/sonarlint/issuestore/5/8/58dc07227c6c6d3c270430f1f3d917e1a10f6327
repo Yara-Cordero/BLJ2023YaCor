@@ -1,12 +1,16 @@
 
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ûÇÇÂ8¥Šª‡Š2J$10821d92-1066-4ae2-8938-7fcbbbf14919
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ûÇÇÂ8÷ê­·Š2J$3fdf21b6-6b28-49ec-8650-dd84f0c8e4e6
 ™
-java:S1149"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(Â¯ƒø8©Šª‡Š2J$df593095-ca11-4abe-babc-9ca2a38a2492
+java:S1149"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(Â¯ƒø8úê­·Š2J$3208604f-21a9-4435-a523-758dcf189c2a
 
-java:S1149"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(Éè‰øÿÿÿÿ8©Šª‡Š2J$06c4ca31-cead-4fb7-ae4f-8e69ee520ed5
+java:S1149"VReplace the synchronized class "Hashtable" by an unsynchronized one such as "HashMap".(Éè‰øÿÿÿÿ8úê­·Š2J$9cac112b-5983-4ee1-86ed-21f595f1271b
 š
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 31 to the 15 allowed.(à”Êïıÿÿÿÿ8ªŠª‡Š2J$e75f03a1-4cfc-42f2-8435-5b6653cac8e0
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 49 to the 15 allowed.(à”Êïıÿÿÿÿ8ûê­·Š2J$fdfcbcfe-cb18-4761-9850-5c103be22be8
+ƒ
+java:S6201v"@Replace this instanceof check and cast with 'instanceof Key key'(ê¡Ã¥8‚ë­·Š2J$637897f4-bb0a-4035-9699-38bab3d792f6
 œ
-java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(ÚãíÛúÿÿÿÿ8µï¨ˆŠ2J$0996af67-04ed-4230-8674-aa3af3c66585
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(ÚãíÛúÿÿÿÿ8„ë­·Š2J$fdd74462-50ae-4b7a-891c-7e0f67d26f78
+~
+java:S1128"6Remove this unused import 'java.rmi.MarshalException'.(­Ğ„¦ùÿÿÿÿ8„ë­·Š2J$d0261261-73cf-4d8f-a229-f72d73f5d7c2
 t
-java:S1068",Remove this unused "filepath" private field.(–îŸˆúÿÿÿÿ8ĞŠª‡Š2J$59b198e6-962a-426c-8a31-49b6bb5c8550
+java:S1068",Remove this unused "filepath" private field.(–îŸˆúÿÿÿÿ8„ë­·Š2J$30066cf9-8edf-4698-b45b-f2b6d03e57d2

@@ -130,16 +130,32 @@ public class Room {
         contents.remove(item);
     }
 
-    public Room leaveBy(String dir){
+    public Room leaveBy(String dir) throws ExitLockedException {
         Exit exit = exits.get(dir);
         if (exit != null){
+            if (exit.isLocked()){
+                throw new ExitLockedException("The exit is locked. You need a key to open it.");
+            }
             return exit.getDest();
         }
         return null;
     }
 
+    public void unlockExit(String dir, Key key){
+        Exit exit = exits.get(dir);
+        if (exit != null){
+            exit.unlock(key);
+        }
+    }
+
     public static class NoRoomException extends Exception {
         public NoRoomException(String errorMessage) {
+            super(errorMessage);
+        }
+    }
+
+    public static class ExitLockedException extends Exception {
+        public ExitLockedException(String errorMessage) {
             super(errorMessage);
         }
     }

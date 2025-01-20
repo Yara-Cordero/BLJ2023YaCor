@@ -32,6 +32,10 @@ G
 I
 src/Zork/TakeCommand.java,7\0\70627dbd1e6403b8b25f1bb5ea0eb59a6468c01c
 Q
-!src/Zork/ItemSpecificCommanf.java,b\1\b1ed3d3d6d66f9706a57c8c25dc121a551069b76
-Q
 !src/Zork/ItemSpecificCommand.java,2\5\25994cdf193e30c3b50acd3ae7d67a91ccc72e8c
+A
+src/Zork/Key.java,3\a\3a6ce8a18c9e4207d2055eadba4591cc5badd921
+G
+src/files/simple_4.zork,6\7\6770e5cfe6fd0b4a34ed24fac8ddc0cd756adbbe
+H
+src/Zork/UseCommand.java,7\4\743680dd1623868ab224817e19bc7970aafc99ee
